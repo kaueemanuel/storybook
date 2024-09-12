@@ -1,0 +1,79 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/Datagrid/setDatagridSearchFilter" />
+
+# `setDatagridSearchFilter`
+
+Configura o filtro de pesquisa do datagrid e atualiza os parâmetros de acordo com os filtros avançados e de pesquisa.
+
+## Assinatura da Função
+
+```typescript
+export function setDatagridSearchFilter<T extends DatagridStoreBase = any>(
+  filter: DatagridParamsFilterType,
+  set: (partial: (state: T) => any, replace?: boolean | undefined) => void,
+  get: () => T
+): void;
+```
+
+## Parâmetros
+
+- **filter**: `DatagridParamsFilterType`  
+  O filtro de pesquisa a ser aplicado.
+
+- **set**: `(partial: (state: T) => any, replace?: boolean | undefined) => void`  
+  Função para atualizar o estado do store.
+
+- **get**: `() => T`  
+  Função para obter o estado atual do store.
+
+## Retorno
+
+- **void**:  
+  A função não retorna nada.
+
+## Exemplo de Uso com Mock do Zustand
+
+```tsx
+import { setDatagridSearchFilter } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { DatagridParamsFilterType, DatagridStoreBase } from 'caminho-do-seu-arquivo-de-tipos';
+
+// Mock do Zustand's set e get functions
+
+interface MockState extends DatagridStoreBase {
+  searchFilter: DatagridParamsFilterType;
+  advancedFilter: DatagridParamsFilterType;
+  params: { Filter?: DatagridParamsFilterType };
+}
+
+let mockState: MockState = {
+  searchFilter: { Connector: 'Or', Values: [] },
+  advancedFilter: { Connector: 'And', Values: [] },
+  params: { Filter: undefined },
+};
+
+function mockSet(update: (state: MockState) => MockState) {
+  mockState = update(mockState);
+}
+
+function mockGet(): MockState {
+  return mockState;
+}
+
+const searchFilter: DatagridParamsFilterType = {
+  Connector: 'Or',
+  Values: [{ PropertyName: 'name', Value: 'John' }],
+};
+
+setDatagridSearchFilter(searchFilter, mockSet, mockGet);
+
+console.log(mockState.params.Filter); // Exibe o filtro combinado de `searchFilter` e `advancedFilter`
+
+// Resultado esperado: 
+// { Connector: 'Or', Values: [{ PropertyName: 'name', Value: 'John' }] }
+```
+
+## Descrição
+
+A função `setDatagridSearchFilter` configura o filtro de pesquisa do datagrid e atualiza os parâmetros de acordo com os filtros de pesquisa e filtros avançados aplicados. Se ambos os filtros estiverem vazios, a função remove o filtro dos parâmetros. Caso contrário, ela combina os valores dos filtros para definir os parâmetros de filtragem.

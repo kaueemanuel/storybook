@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/randomColor" />
+
+# `randomColor`
+
+Gera uma cor hexadecimal aleatória.
+
+## Assinatura da Função
+
+```typescript
+export function randomColor(): string;
+```
+
+## Parâmetros
+
+Esta função não recebe parâmetros.
+
+## Retorno
+
+- **string**:  
+  Uma string representando uma cor hexadecimal aleatória.
+
+## Exemplo de Uso
+
+```tsx
+import { randomColor } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const color = randomColor();
+
+console.log(color); // Exemplo: '#3e2f1b'
+```
+
+## Descrição
+
+A função `randomColor` gera uma cor hexadecimal aleatória. Isso é útil para criar cores dinâmicas em uma interface de usuário ou para qualquer aplicação que necessite de uma seleção aleatória de cores. A cor gerada é sempre no formato `#hexadecimal`.

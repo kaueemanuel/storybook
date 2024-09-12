@@ -1,0 +1,54 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/Datagrid/onAdvancedFilter" />
+
+# `onAdvancedFilter`
+
+Aplica um valor de filtro avançado em um índice específico.
+
+## Assinatura da Função
+
+```typescript
+export const onAdvancedFilter = (
+  index: number,
+  value: string | number | boolean | null,
+  filters: DatagridParamsFilterType
+): DatagridParamsFilterType;
+```
+
+## Parâmetros
+
+- **index**: `number`  
+  O índice do filtro a ser atualizado.
+
+- **value**: `string | number | boolean | null`  
+  O novo valor a ser aplicado ao filtro.
+
+- **filters**: `DatagridParamsFilterType`  
+  Os filtros atuais.
+
+## Retorno
+
+- **DatagridParamsFilterType**:  
+  Os filtros atualizados com o novo valor aplicado no índice especificado.
+
+## Exemplo de Uso
+
+```tsx
+import { onAdvancedFilter } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { DatagridParamsFilterType } from 'caminho-do-seu-arquivo-de-tipos';
+
+const currentFilters: DatagridParamsFilterType = {
+  Connector: 'And',
+  Values: [{ PropertyName: 'age', Value: 25 }],
+};
+
+const updatedFilters = onAdvancedFilter(0, 30, currentFilters);
+
+console.log(updatedFilters); // { Connector: 'And', Values: [{ PropertyName: 'age', Value: 30 }] }
+```
+
+## Descrição
+
+A função `onAdvancedFilter` permite atualizar um valor de filtro em um índice específico dentro de uma estrutura de filtros avançados. Isso é útil em situações onde você precisa modificar filtros dinamicamente em um grid ou tabela de dados.

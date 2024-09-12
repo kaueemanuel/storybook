@@ -1,0 +1,12 @@
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon"
+
+export const Monitoring = (props: SvgIconProps) => {
+  return (
+    <SvgIcon {...props}>
+      <path
+        transform="translate(0, -1.5)"
+        d="M3.75 21.3492V19.705L5.24995 18.2051V21.3492H3.75ZM7.75 21.3492V15.705L9.24995 14.2051V21.3492H7.75ZM11.75 21.3492V14.2051L13.25 15.73V21.3492H11.75ZM15.75 21.3492V15.73L17.25 14.2301V21.3492H15.75ZM19.75 21.3492V11.705L21.25 10.2051V21.3492H19.75ZM3.75 15.8184V13.705L10.5 6.95505L14.5 10.9551L21.25 4.20508V6.31848L14.5 13.0685L10.5 9.06845L3.75 15.8184Z"
+      />
+    </SvgIcon>
+  )
+}

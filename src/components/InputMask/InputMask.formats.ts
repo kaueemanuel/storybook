@@ -1,0 +1,6 @@
+export const CellphoneWithDDDMaskFormat = "(99) 9999-99999"
+export const CepMaskFormat = "99999-999"
+export const DateMaskFormat = "99/99/9999"
+export const DateTimeMaskFormat = "99/99/9999 99:99"
+export const HourMaskFormat = "99:99"
+export const CPFMaskFormat = "999.999.999-99"

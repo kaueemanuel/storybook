@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getValueFromUrlParam" />
+
+# `getValueFromUrlParam`
+
+Extrai o valor de um parâmetro específico de uma string de consulta de URL.
+
+## Assinatura da Função
+
+```typescript
+export const getValueFromUrlParam = (search: string, parameter: string): string[];
+```
+
+## Parâmetros
+
+- **search**: `string`  
+  A string de consulta da URL que contém os parâmetros.
+
+- **parameter**: `string`  
+  O nome do parâmetro cujo valor você deseja extrair.
+
+## Retorno
+
+- **string[]**:  
+  Um array contendo os valores correspondentes ao parâmetro especificado. Se o parâmetro não for encontrado, retorna um array vazio.
+
+## Exemplo de Uso
+
+```tsx
+import { getValueFromUrlParam } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const search = "?name=John&age=30&name=Jane";
+const values = getValueFromUrlParam(search, "name");
+
+console.log(values); // ['John', 'Jane']
+```
+
+## Descrição
+
+A função `getValueFromUrlParam` analisa uma string de consulta de URL (como `?name=John&age=30`) e retorna um array com os valores correspondentes ao parâmetro especificado. Isso é útil para extrair valores de parâmetros específicos em URLs com múltiplos parâmetros.

@@ -1,0 +1,81 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as DrawerStories from "./Drawer.stories.tsx"
+
+<Meta title="Components/Navigation/Drawer/Docs" />
+
+# Drawer
+
+## Usage
+
+<p>
+  React Drawer was used to create the drawer, so all options are found here{" "}
+  <a href="https://mui.com/material-ui/api/drawer/" target="_blank">
+    React Drawer Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the drawer you must use the `DrawerProvider`, to do this import
+  it into the scope of your application with children inside. By default, this
+  has already been done globally.
+</p>
+
+```tsx
+import { DrawerProvider } from "pgv-lib/ui/drawer"
+;<React.StrictMode>
+  <DrawerProvider>
+    <App />
+  </DrawerProvider>
+</React.StrictMode>
+```
+
+<p>
+  Now just imports from hook `useDrawer` the `openDrawer` function anywhere in
+  the application and to use.{" "}
+  <a href="https://mui.com/material-ui/api/drawer/" target="_blank">
+    drawerProps options
+  </a>
+  .
+</p>
+
+```tsx
+import { useDrawer } from "pgv-lib/ui/hooks/drawer"
+
+const { openDrawer } = useDrawer()
+
+openDrawer({
+  headerProps: {
+    title: "Title",
+    description: "Description",
+    breadcrumb: "Home / Function",
+  },
+  HeaderComponent: DrawerHeader,
+  ActionsComponent: DrawerActions,
+  drawerContent: <DrawerContent key="content">Content</DrawerContent>,
+  drawerProps: {
+    noCloseButtonHeader: true,
+    showButtonAnchor: true,
+    showButtonFullscreen: true,
+    noTopButtonAnchor: true,
+    noRightButtonAnchor: true,
+    noBottomButtonAnchor: true,
+    noLeftButtonAnchor: true,
+  },
+})
+```
+
+<p>If you want to close the drawer you can use the `closeDrawer` function.</p>
+
+```tsx
+import { useDrawer } from "pgv-lib/ui/hooks/drawer"
+
+const { openDrawer, closeDrawer } = useDrawer()
+
+openDrawer({
+  drawerContent: "Content",
+})
+
+// dismiss open drawer
+closeDrawer()
+```

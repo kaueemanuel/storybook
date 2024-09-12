@@ -1,0 +1,48 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+import map from "lodash/map";
+
+// Informações Meta
+<Meta title="Functions/serialize" />
+
+# `serialize`
+
+Serializa um objeto em uma string de consulta URL (query string), com a opção de remover aspas duplas.
+
+## Assinatura da Função
+
+```typescript
+export const serialize = (
+  obj: Record<string, any>, 
+  config?: { clean: boolean }
+): string;
+```
+
+## Parâmetros
+
+- **obj**: `Record<string, any>`  
+  O objeto que você deseja serializar em uma string de consulta URL.
+
+- **config**: `{ clean: boolean }`  
+  Um objeto de configuração opcional. Se `clean` for `true`, a função remove aspas duplas (`%22`) do resultado.
+
+## Retorno
+
+- **string**:  
+  A string de consulta URL gerada a partir do objeto. Retorna uma string vazia se o objeto estiver vazio.
+
+## Exemplo de Uso
+
+```tsx
+import { serialize } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const queryString = serialize({ name: "John Doe", age: 30 });
+console.log(queryString); // 'name=%22John%20Doe%22&age=30'
+
+const cleanQueryString = serialize({ name: "John Doe", age: 30 }, { clean: true });
+console.log(cleanQueryString); // 'name=John%20Doe&age=30'
+```
+
+## Descrição
+
+A função `serialize` converte um objeto em uma string de consulta URL (query string), onde cada par chave-valor é separado por `&`. Se a configuração `clean` for definida como `true`, a função remove as aspas duplas (`%22`) do resultado final. Isso é útil para criar strings de consulta URL de forma programática, especialmente ao lidar com valores que precisam ser codificados.

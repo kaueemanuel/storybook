@@ -1,0 +1,75 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as SnackbarStories from "./Snackbar.stories.tsx"
+
+<Meta title="Components/Feedback/Snackbar/Docs" />
+
+# Snackbar
+
+## Usage
+
+<p>
+  Notistack was used to create the snackbar, so all options are found here{" "}
+  <a href="https://notistack.com/api-reference" target="_blank">
+    Notistack Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the snackbar you must use the `SnackbarProvider`, to do this
+  import it into the scope of your application.
+</p>
+
+```tsx
+import { SnackbarProvider } from "pgv-lib/ui/snackbar"
+
+;<React.StrictMode>
+  <SnackbarProvider maxSnack={5} />
+  <App />
+</React.StrictMode>
+```
+
+<p>
+  Now just use the `openSnackbar` function anywhere in the application.{" "}
+  <a
+    href="https://notistack.com/api-reference#enqueuesnackbar-options"
+    target="_blank"
+  >
+    openSnackbar options
+  </a>
+  .
+</p>
+
+```tsx
+import { openSnackbar } from "pgv-lib/ui/snackbar"
+
+openSnackbar("Snackbar message", {
+  variant: "success",
+  closeButton: true,
+  copyButton: true,
+  persist: true,
+  anchorOrigin: {
+    vertical: "bottom",
+    horizontal: "right",
+  },
+})
+```
+
+<p>
+  If you want to close the snackbar you can use the `closeSnackbar` function.
+</p>
+
+```tsx
+import { openSnackbar } from "pgv-lib/ui/snackbar"
+
+const key = openSnackbar("Snackbar message", {
+  variant: "success",
+})
+
+// dismiss a specific snackbar by passing
+// the key returned from enqueueSnackbar
+closeSnackbar(key)
+
+// dismiss all open snackbars
+closeSnackbar()
+```

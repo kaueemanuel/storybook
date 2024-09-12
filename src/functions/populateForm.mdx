@@ -1,0 +1,62 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/populateForm" />
+
+# `populateForm`
+
+Popula um formulário com os valores de uma resposta, usando um esquema de validação do formulário.
+
+## Assinatura da Função
+
+```typescript
+export const populateForm = (
+  form: any,
+  formValidatorSchema: any,
+  response: any
+): void;
+```
+
+## Parâmetros
+
+- **form**: `any`  
+  O formulário que será populado, geralmente um objeto de controle de formulário (como o `react-hook-form`).
+
+- **formValidatorSchema**: `any`  
+  O esquema de validação do formulário, que define as chaves que serão populadas.
+
+- **response**: `any`  
+  A resposta ou os dados que contêm os valores a serem inseridos no formulário.
+
+## Retorno
+
+- **void**:  
+  A função não retorna nada. Ela popula o formulário diretamente.
+
+## Exemplo de Uso
+
+```tsx
+import { populateForm } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const form = useForm(); // Exemplo com react-hook-form
+const formValidatorSchema = {
+  shape: {
+    name: 'string',
+    age: 'number',
+    isActive: 'boolean',
+  },
+};
+const response = {
+  name: 'John Doe',
+  age: 30,
+  isActive: true,
+};
+
+populateForm(form, formValidatorSchema, response);
+
+console.log(form.getValues()); // { name: 'John Doe', age: 30, isActive: true }
+```
+
+## Descrição
+
+A função `populateForm` preenche um formulário com os valores fornecidos em uma resposta, usando um esquema de validação para determinar quais chaves devem ser populadas. Isso é útil ao carregar dados em um formulário para edição ou visualização, garantindo que somente as chaves esperadas sejam populadas.

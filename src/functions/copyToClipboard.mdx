@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/copyToClipboard" />
+
+# `copyToClipboard`
+
+Uma função utilitária que copia um texto para a área de transferência.
+
+## Assinatura da Função
+
+```typescript
+export function copyToClipboard(text: string): void;
+```
+
+## Parâmetros
+
+- **text**: `string`  
+  O texto que você deseja copiar para a área de transferência.
+
+## Retorno
+
+- **void**:  
+  A função não retorna nada.
+
+## Exemplo de Uso
+
+```tsx
+import { copyToClipboard } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const textToCopy = 'Este é um texto de exemplo';
+copyToClipboard(textToCopy);
+
+console.log('Texto copiado para a área de transferência');
+```
+
+## Descrição
+
+A função `copyToClipboard` cria um elemento `input`, insere o texto nele e, em seguida, utiliza o comando `document.execCommand("copy")` para copiar o texto para a área de transferência. Após a cópia, o elemento é removido do DOM.

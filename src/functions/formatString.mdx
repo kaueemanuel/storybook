@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+
+// Informações Meta
+<Meta title="Functions/formatString" />
+
+# `formatString`
+
+Formata um texto substituindo placeholders por valores fornecidos em um array de parâmetros.
+
+## Assinatura da Função
+
+```typescript
+function formatString(text: string = "", params: Array<string> = []): string;
+```
+
+## Parâmetros
+
+- **text**: `string`  
+  O texto a ser formatado, contendo placeholders no formato `{0}`, `{1}`, etc.
+
+- **params**: `Array<string>`  
+  Um array de strings que será usado para substituir os placeholders no texto.
+
+## Retorno
+
+- **string**:  
+  O texto formatado com os placeholders substituídos pelos valores dos parâmetros fornecidos.
+
+## Exemplo de Uso
+
+```tsx
+import { formatString } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const template = "Olá, {0}! Você tem {1} novas mensagens.";
+const formattedText = formatString(template, ["João", "5"]);
+
+console.log(formattedText); // 'Olá, João! Você tem 5 novas mensagens.'
+```
+
+## Descrição
+
+A função `formatString` substitui placeholders numerados (`{0}`, `{1}`, etc.) em um texto pelos valores fornecidos em um array de parâmetros. Isso é útil para criar mensagens dinâmicas ou formatar strings de maneira programática. Se o texto ou os parâmetros estiverem vazios, a função retorna o texto original sem alterações.

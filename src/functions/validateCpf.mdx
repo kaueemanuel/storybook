@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/validateCPF" />
+
+# `validateCPF`
+
+Valida um número de CPF (Cadastro de Pessoas Físicas) brasileiro.
+
+## Assinatura da Função
+
+```typescript
+export const validateCPF = (cpf: string): boolean;
+```
+
+## Parâmetros
+
+- **cpf**: `string`  
+  Número do CPF a ser validado.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o CPF for válido, caso contrário, `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { validateCPF } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const cpf = '123.456.789-09';
+const isValid = validateCPF(cpf);
+
+console.log(isValid); // true ou false dependendo da validade do CPF
+```
+
+## Descrição
+
+A função `validateCPF` é usada para verificar a validade de um número de CPF brasileiro. A validação é realizada em várias etapas:
+
+1. Remoção de Caracteres Não Numéricos: Todos os caracteres que não são dígitos são removidos do CPF.
+2. Verificação de Comprimento: O CPF deve ter exatamente 11 dígitos.
+3. Verificação de Dígitos Iguais: CPF composto apenas por dígitos iguais (ex: 111.111.111-11) é considerado inválido.
+4. Validação dos Dígitos Verificadores: Calcula e valida os dois dígitos verificadores finais do CPF.
+
+Se o CPF passar por todas essas verificações, a função retorna `true`; caso contrário, retorna `false`.

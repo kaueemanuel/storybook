@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getFormattedIconName" />
+
+# `getFormattedIconName`
+
+Retorna a extensão de um arquivo a partir do nome ou caminho do arquivo.
+
+## Assinatura da Função
+
+```typescript
+export function getFormattedIconName(name?: string): string | null;
+```
+
+## Parâmetros
+
+- **name**: `string`  
+  Nome do ícone.
+
+## Retorno
+
+- **string**:  
+  Nome do ícone formatado.
+
+## Exemplo de Uso
+
+```tsx
+import { getFormattedIconName } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedIconName= getFormattedIconName('access_time');
+
+console.log(formattedIconName); // 'Access Time'
+```
+
+## Descrição
+
+A função `getFormattedIconName` pega o nome cru do icone e tranforma para um formato para apresentação.

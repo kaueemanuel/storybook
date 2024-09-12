@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/userAvatarByName" />
+
+# `userAvatarByName`
+
+Converte uma string de nome em uma string com duas letras maiúsculas representando as iniciais do usuário.
+
+## Assinatura da Função
+
+```typescript
+export const userAvatarByName = (name: string): string;
+```
+
+## Parâmetros
+
+- **name**: `string`  
+  O nome completo do usuário.
+
+## Retorno
+
+- **string**:  
+  Uma string com duas letras maiúsculas representando as iniciais do primeiro e do último nome. Se houver apenas um nome, retorna a inicial desse nome. Se não houver palavras válidas, retorna uma string vazia.
+
+## Exemplo de Uso
+
+```tsx
+import { userAvatarByName } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const avatar = userAvatarByName('Super Admin User');
+
+console.log(avatar); // 'SU'
+```
+
+## Descrição
+
+A função `userAvatarByName` é projetada para gerar um avatar textual com base nas iniciais do nome do usuário. Ela divide o nome em palavras, remove caracteres não alfanuméricos do início das palavras e obtém as iniciais do primeiro e do último nome. Se houver apenas um nome, a função retorna a inicial desse nome.
+
+Isso é útil para criar avatares ou identificadores baseados em texto para usuários em interfaces onde é necessário exibir uma representação simplificada do nome do usuário.

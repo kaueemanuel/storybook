@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import DOMPurify from "dompurify";
+import isEmpty from "lodash/isEmpty";
+
+// Informações Meta
+<Meta title="Functions/sanitizeHtml" />
+
+# `sanitizeHtml`
+
+Sanitiza uma string ou nó HTML, removendo qualquer código malicioso potencial.
+
+## Assinatura da Função
+
+```typescript
+export const sanitizeHtml = (
+  html: string | Node,
+  options?: DOMPurify.Config
+): string;
+```
+
+## Parâmetros
+
+- **html**: `string | Node`  
+  A string HTML ou nó que você deseja sanitizar.
+
+- **options**: `DOMPurify.Config`  
+  Um objeto de configuração opcional para personalizar a sanitização.
+
+## Retorno
+
+- **string**:  
+  O HTML sanitizado como uma string, com qualquer código malicioso removido. Retorna uma string vazia se o parâmetro `html` estiver vazio.
+
+## Exemplo de Uso
+
+```tsx
+import { sanitizeHtml } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const safeHtml = sanitizeHtml('<div><script>alert("Hacked!")</script></div>');
+
+console.log(safeHtml); // '<div></div>'
+```
+
+## Descrição
+
+A função `sanitizeHtml` utiliza `DOMPurify` para limpar uma string ou nó HTML, removendo qualquer código malicioso, como scripts ou atributos perigosos. Isso é útil para garantir que o conteúdo HTML exibido na sua aplicação seja seguro, especialmente quando o HTML é proveniente de fontes externas ou dinâmicas. Se o `html` fornecido estiver vazio, a função retorna uma string vazia.

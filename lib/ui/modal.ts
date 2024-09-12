@@ -1,0 +1,7 @@
+export { useModal } from "../../src/providers/modal/hooks/useModal"
+export { ModalHeader } from "../../src/providers/modal/ModalHeader/ModalHeader"
+export { ModalContent } from "../../src/providers/modal/ModalContent/ModalContent"
+export { ModalActions } from "../../src/providers/modal/ModalActions/ModalActions"
+export type { ModalHeaderProps } from "../../src/providers/modal/ModalHeader/ModalHeader"
+export type { ModalContentProps } from "../../src/providers/modal/ModalContent/ModalContent"
+export type { ModalActionsProps } from "../../src/providers/modal/ModalActions/ModalActions"

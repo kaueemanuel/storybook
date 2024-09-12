@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/urlify" />
+
+# `urlify`
+
+Formata texto, convertendo URLs em links HTML que abrem em uma nova aba.
+
+## Assinatura da Função
+
+```typescript
+export function urlify(text: string | null): string | null;
+```
+
+## Parâmetros
+
+- **text**: `string | null`  
+  O texto que será formatado. Se for null, será retornado como está.
+
+## Retorno
+
+- **string | null**:  
+  O texto formatado com URLs convertidas em links HTML que abrem em uma nova aba.
+
+## Exemplo de Uso
+
+```tsx
+import { urlify } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const result = urlify('Visit us at http://example.com for more info.');
+
+console.log(result); // 'Visit us at <a target="_blank" href="http://example.com">http://example.com</a> for more info.'
+```
+
+## Descrição
+
+A função `urlify` é projetada para converter URLs em texto em links HTML clicáveis que se abrem em uma nova aba. Ela utiliza expressões regulares para identificar URLs e garantir que URLs já presentes em atributos href ou src não sejam modificadas. A função lida com URLs nos protocolos HTTP, HTTPS, FTP e FILE.
+
+Esta função é útil para enriquecer o conteúdo de texto com links clicáveis automaticamente, sem a necessidade de edição manual do HTML.

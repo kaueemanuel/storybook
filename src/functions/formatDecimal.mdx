@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatDecimal" />
+
+# `formatDecimal`
+
+Formata um número para um formato decimal de acordo com as configurações de localização e opções fornecidas.
+
+## Assinatura da Função
+
+```typescript
+export const formatDecimal = (
+  parameter: number | string,
+  options?: { style: string }
+): string;
+```
+
+## Parâmetros
+
+- **parameter**: `number | string`  
+  O número que você deseja formatar.
+
+- **options**: `object`  
+  Opções para a formatação do número. O padrão é `{ style: "decimal" }`.
+
+## Retorno
+
+- **string**:  
+  O número formatado de acordo com as configurações de localização e as opções fornecidas.
+
+## Exemplo de Uso
+
+```tsx
+import { formatDecimal } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedNumber = formatDecimal(123456);
+
+console.log(formattedNumber); // '123.456' ou '123,456', dependendo da localização do usuário
+```
+
+## Descrição
+
+A função `formatDecimal` utiliza a `Intl.NumberFormat API` para formatar um número de acordo com as configurações de localização do navegador e as opções fornecidas. Isso é útil para exibir números em um formato que é familiar para o usuário, como `123.456` ou `123,456`.

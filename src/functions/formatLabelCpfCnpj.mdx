@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatLabelCpfCnpj" />
+
+# `formatLabelCpfCnpj`
+
+Retorna o rótulo apropriado (`CNPJ` ou `CPF`) com base no tipo fornecido.
+
+## Assinatura da Função
+
+```typescript
+export const formatLabelCpfCnpj = (type: number): string;
+```
+
+## Parâmetros
+
+- **type**: `number`  
+  O tipo que define qual rótulo retornar. `1` retorna `CNPJ`, `2` retorna `CPF`, e qualquer outro valor retorna `-`.
+
+## Retorno
+
+- **string**:  
+  O rótulo correspondente ao tipo fornecido, ou `-` se o tipo não for reconhecido.
+
+## Exemplo de Uso
+
+```tsx
+import { formatLabelCpfCnpj } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const labelCnpj = formatLabelCpfCnpj(1);
+const labelCpf = formatLabelCpfCnpj(2);
+const labelUnknown = formatLabelCpfCnpj(3);
+
+console.log(labelCnpj); // 'CNPJ'
+console.log(labelCpf);  // 'CPF'
+console.log(labelUnknown); // '-'
+```
+
+## Descrição
+
+A função `formatLabelCpfCnpj` retorna um rótulo baseado no tipo fornecido: `CNPJ` para o tipo `1` e `CPF` para o tipo `2`. Se o tipo não corresponder a nenhum desses valores, a função retorna um traço (`-`). Isso é útil para exibir rótulos apropriados em formulários ou relatórios onde o tipo de identificação deve ser dinamicamente determinado.

@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getLocationUrl" />
+
+# `getLocationUrl`
+
+Retorna a URL base atual, incluindo o protocolo e o host.
+
+## Assinatura da Função
+
+```typescript
+export const getLocationUrl = (): string;
+```
+
+## Parâmetros
+
+Esta função não recebe parâmetros.
+
+## Retorno
+
+- **string**:  
+  A URL base da localização atual, composta pelo protocolo e host.
+
+## Exemplo de Uso
+
+```tsx
+import { getLocationUrl } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const url = getLocationUrl();
+
+console.log(url); // 'https://www.example.com'
+```
+
+## Descrição
+
+A função `getLocationUrl` retorna a URL base da localização atual, incluindo o protocolo (como `https`) e o host (como `www.example.com`). Isso é útil para construir URLs absolutas ou fazer referências à localização atual.

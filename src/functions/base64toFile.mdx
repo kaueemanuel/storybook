@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+// Informações Meta
+<Meta title="Functions/base64toFile" />
+
+# `base64toFile`
+
+Uma função utilitária que transforma uma URL em Base64 em um objeto `File`.
+
+## Assinatura da Função
+
+```typescript
+export const base64toFile = (url: string, filename: string, mimeType: string) => Promise<File>;
+```
+
+## Parâmetros
+
+- **url**: `string`  
+  A URL do arquivo em formato Base64 que você deseja converter para um objeto `File`.
+
+- **filename**: `string`  
+  O nome do arquivo a ser criado.
+
+- **mimeType**: `string`  
+  O tipo MIME do arquivo, como `image/png`, `application/pdf`, etc.
+
+## Retorno
+
+- **Promise\<File\>**:  
+  Um novo objeto `File` contendo os dados binários representados pelo `url`.
+
+## Exemplo de Uso
+
+```typescript
+import { base64toFile } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const url = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...';
+base64toFile(url, 'file.png', 'image/png').then(file => {
+  console.log(file);
+  // Agora você pode usar o objeto File, por exemplo, para fazer upload
+});
+```
+
+## Descrição
+
+A função `base64toFile` recebe uma URL em formato Base64, decodifica e converte em um objeto `File`. Isso é útil quando você precisa manipular ou carregar arquivos a partir de dados representados em Base64.

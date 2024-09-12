@@ -1,0 +1,66 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as DatagridCardStores from "./DatagridCard.stories.tsx"
+
+<Meta title="Components/Surfaces/DatagridCard/Docs" />
+
+# DatagridCard
+
+## Usage
+
+```tsx
+import { 
+  DatagridCard, 
+  DatagridCardHeader, 
+  DatagridCardHeaderTitle, 
+  DatagridInputSearch, 
+  DatagridRefreshTimer, 
+  DatagridCardContent, 
+  Datagrid
+} from "pgv-lib/ui/components"
+
+  <DatagridCard>
+    <DatagridCardHeader>
+      <DatagridCardHeaderTitle title="Título" />
+      <Box display="flex" alignItems="center" gap={4}>
+        <DatagridInputSearch />
+        <DatagridRefreshTimer 
+          actionRefresh={() => {}}
+          defaultRefreshTime={0}
+        />
+      </Box>
+    </DatagridCardHeader>
+    <DatagridCardContent>
+      <Datagrid columns={columns} rows={rows} />
+    </DatagridCardContent>
+  </DatagridCard>
+```
+or 
+
+```tsx
+import { 
+  DatagridCard, 
+  DatagridToolbarTemplate,
+  DatagridCardContent, 
+  Datagrid
+} from "pgv-lib/ui/components"
+
+  <DatagridCard>
+    <DatagridToolbarTemplate
+      title="Título"
+      options={{
+        search: {
+          handleOnSearch: () => {},
+          show: true,
+        },
+        refreshTimer: {
+          fetchData: () => {},
+          show: true,
+        },
+      }}
+    />
+    <DatagridCardContent>
+      <Datagrid rows={rows} columns={columns} />
+    </DatagridCardContent>
+  </DatagridCard>
+```

@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as ToggleButtonGroupStories from "./ToggleButtonGroup.stories.tsx"
+
+<Meta title="Components/Inputs/Buttons/ToogleButtonGroup/Docs" />
+
+# ToggleButtonGroup
+
+## Usage
+
+<p>
+  ToggleButtonGroups are surfaces that display content and actions on multiple
+  topic. So all options are found here{" "}
+  <a href="https://mui.com/material-ui/react-toggle-button/" target="_blank">
+    ToggleButtonGroup Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the toogle button group you must use the `ToggleButtonGroup`,
+  to do this import it into the scope of your view component.
+</p>
+
+```tsx
+import { ToggleButtonGroup } from "pgv-lib/ui/components"
+;<ToggleButtonGroup>children</ToggleButtonGroup>
+```
+
+```tsx
+import { ToggleButton, ToggleButtonGroup } from "pgv-lib/ui/components"
+;<ToggleButtonGroup>
+  <ToggleButton />
+  <ToggleButton />
+  <ToggleButton />
+</ToggleButtonGroup>
+```

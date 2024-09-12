@@ -1,0 +1,88 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getPathInfo" />
+
+# getPathInfo
+
+Uma função utilitária que analisa o caminho atual da URL ou uma string `pathname` fornecida e retorna um objeto contendo `segment`, `module` e `routine`. Se o `pathname` fornecido estiver vazio ou a URL não contiver partes suficientes, a função retornará `null`.
+
+## Uso
+
+```tsx
+import { getPathInfo } from './path-utils';
+
+// Exemplo usando o pathname atual da URL
+const pathInfo = getPathInfo();
+console.log(pathInfo);
+// Exemplo de saída: { segment: 'dashboard', module: 'user', routine: 'details' }
+
+// Exemplo usando um pathname fornecido
+const pathInfoWithCustomPath = getPathInfo('/ui/dashboard/user/details');
+console.log(pathInfoWithCustomPath);
+// Saída: { segment: 'dashboard', module: 'user', routine: 'details' }
+```
+
+## Argumentos
+
+### `pathname` (opcional)
+
+- **Tipo:** `string`
+- **Descrição:** O caminho da URL a ser analisado. Se não for fornecido, a função utiliza `window.location.pathname`.
+- **Exemplo:** `'/ui/dashboard/user/details'`
+
+## Retorno
+
+- **Tipo:** `{ segment: string, module: string, routine: string } | null`
+- **Descrição:** Um objeto contendo três propriedades:
+  - `segment`: A primeira parte do caminho da URL (por exemplo, `'dashboard'`).
+  - `module`: A segunda parte do caminho da URL, se disponível (por exemplo, `'user'`).
+  - `routine`: A terceira parte do caminho da URL, se disponível (por exemplo, `'details'`).
+- Se o caminho for vazio ou inválido, a função retorna `null`.
+
+## Cenários de Exemplo
+
+### 1. Sem `pathname` fornecido
+
+Se nenhum `pathname` for fornecido, a função utiliza `window.location.pathname` após remover `/ui` do caminho. Por exemplo, se a URL atual for `https://example.com/ui/dashboard/user/details`:
+
+```tsx
+const pathInfo = getPathInfo();
+console.log(pathInfo);
+// Saída: { segment: 'dashboard', module: 'user', routine: 'details' }
+```
+
+### 2. `pathname` fornecido
+
+Quando um `pathname` personalizado é passado para a função, ele será usado para determinar as partes do caminho:
+
+```tsx
+const pathInfo = getPathInfo('/ui/reports/sales/summary');
+console.log(pathInfo);
+// Saída: { segment: 'reports', module: 'sales', routine: 'summary' }
+```
+
+### 3. Partes insuficientes no caminho
+
+Se o caminho contiver menos de duas partes, `module` e `routine` serão strings vazias:
+
+```tsx
+const pathInfo = getPathInfo('/ui/reports');
+console.log(pathInfo);
+// Saída: { segment: 'reports', module: '', routine: '' }
+```
+
+### 4. Caminho vazio ou inválido
+
+Se o caminho estiver vazio ou não contiver segmentos válidos, a função retorna `null`:
+
+```tsx
+const pathInfo = getPathInfo('');
+console.log(pathInfo); // Saída: null
+```
+
+## Notas
+
+- A função remove `/ui` do caminho fornecido ou atual.
+- Utiliza a filtragem de strings vazias para evitar partes de caminho inválidas.
+`;

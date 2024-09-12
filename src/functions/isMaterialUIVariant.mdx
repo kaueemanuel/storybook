@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import { CircularProgressProps } from "@mui/material";
+
+// Informações Meta
+<Meta title="Functions/isMaterialUIVariant" />
+
+# `isMaterialUIVariant`
+
+Verifica se um valor corresponde a uma das variantes de cor do Material UI.
+
+## Assinatura da Função
+
+```typescript
+export const isMaterialUIVariant = (
+  value: any
+): value is CircularProgressProps["color"];
+```
+
+## Parâmetros
+
+- **value**: `any`  
+  O valor que você deseja verificar se é uma variante de cor válida do Material UI.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o valor for uma das variantes de cor do Material UI (`primary`, `secondary`, `error`, `info`, `success`, `warning`, `inherit`), caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { isMaterialUIVariant } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const color = 'primary';
+const isValid = isMaterialUIVariant(color);
+
+console.log(isValid); // true
+```
+
+## Descrição
+
+A função `isMaterialUIVariant` verifica se um determinado valor é uma das variantes de cor suportadas pelo Material UI para componentes como `CircularProgress`. Isso é útil para garantir que valores passados para propriedades de cor estejam dentro dos valores aceitos pelo Material UI, evitando erros de renderização.

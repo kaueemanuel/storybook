@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatFileSizeDescription" />
+
+# `formatFileSizeDescription`
+
+Formata um valor em bytes para uma string descritiva de tamanho de arquivo, utilizando unidades SI ou binárias.
+
+## Assinatura da Função
+
+```typescript
+export const formatFileSizeDescription = (bytes: number, si?: boolean): string;
+```
+
+## Parâmetros
+
+- **bytes**: `number`  
+  O valor em bytes que você deseja formatar.
+
+- **si**: `boolean`  
+  Define se o formato será em unidades SI (base 1000) ou binárias (base 1024). O padrão é `true` (SI).
+
+## Retorno
+
+- **string**:  
+  O tamanho do arquivo formatado como uma string, por exemplo, `1.2mb` ou `1.2MiB`.
+
+## Exemplo de Uso
+
+```tsx
+import { formatFileSizeDescription } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const fileSize = 123456789;
+const formattedSize = formatFileSizeDescription(fileSize);
+
+console.log(formattedSize); // '123.5mb' ou '117.7MiB', dependendo do valor de `si`
+```
+
+## Descrição
+
+A função `formatFileSizeDescription` converte um valor em bytes para uma string descritiva que representa o tamanho do arquivo. A função suporta unidades SI (como `kb`, `mb`, `gb`) e unidades binárias (como `kib`, `mib`, `gib`). O formato pode ser ajustado com o parâmetro `si` para escolher entre essas duas convenções.

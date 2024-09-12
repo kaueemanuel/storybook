@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatMoney" />
+
+# `formatMoney`
+
+Converte um valor decimal em um formato monetário, com ou sem o texto da moeda.
+
+## Assinatura da Função
+
+```typescript
+export const formatMoney = (parameter: number, removeCurrencyText?: boolean): string;
+```
+
+## Parâmetros
+
+- **parameter**: `number`  
+  O número que você deseja formatar como valor monetário.
+
+- **removeCurrencyText**: `boolean`  
+  Define se o texto da moeda (R$) deve ser removido. O padrão é `false`.
+
+## Retorno
+
+- **string**:  
+  O valor formatado como uma string de moeda brasileira (BRL), com ou sem o texto da moeda.
+
+## Exemplo de Uso
+
+```tsx
+import { formatMoney } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedValueWithCurrency = formatMoney(333.33);
+const formattedValueWithoutCurrency = formatMoney(333.33, true);
+
+console.log(formattedValueWithCurrency); // 'R$ 333,33'
+console.log(formattedValueWithoutCurrency); // '333,33'
+```
+
+## Descrição
+
+A função `formatMoney` formata um valor numérico como uma string monetária no formato brasileiro (BRL). Você pode optar por incluir ou remover o texto da moeda (R$) usando o parâmetro `removeCurrencyText`. Isso é útil para exibir valores monetários de maneira consistente e de acordo com as convenções locais.

@@ -1,0 +1,55 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as ResizablePanelStories from "./ResizablePanel.stories.tsx"
+
+<Meta title="Components/Utils/ResizablePanel/Docs" />
+
+# ResizablePanel
+
+## Usage
+
+<p>
+  React Resizable Panels was used to create a panel resizable with multiple
+  components, so all options are found here
+  <a
+    href="https://www.npmjs.com/package/react-resizable-panels"
+    target="_blank"
+    rel="noopener"
+  >
+    React Resizable Panels Api Reference
+  </a>
+  and{" "}
+  <a
+    href=" https://react-resizable-panels.vercel.app/"
+    target="_blank"
+    rel="noopener"
+  >
+    React Resizable Panels Demo
+  </a>
+  . In PGV case, we've a ResizablePanel. So, it's based on React Resizable Panels
+  that have been customized of PGV context.
+</p>
+<p>
+  To make use of the resizable panels you must use the `ResizablePanel`, to do
+  this import it into the scope of your view component.
+</p>
+
+```tsx
+import { ResizablePanel } from "pgv-lib/ui/components"
+;<ResizablePanel>children</ResizablePanel>
+```
+
+```tsx
+import {
+  ResizablePanel,
+  ResizablePanelContent,
+  ResizablePanelDragHandle,
+} from "pgv-lib/ui/components"
+;<ResizablePanel autoSaveId="example" direction="horizontal">
+  <ResizablePanelContent id="left" order={1}></ResizablePanelContent>
+  <ResizablePanelDragHandle />
+  <ResizablePanelContent id="center" order={2}></ResizablePanelContent>
+  <ResizablePanelDragHandle />
+  <ResizablePanelContent id="right" order={3}></ResizablePanelContent>
+</ResizablePanel>
+```

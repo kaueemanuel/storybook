@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatPhoneInput" />
+
+# `formatPhoneInput`
+
+Formata um número de telefone ou celular de acordo com o tamanho do número e se o DDD está incluído.
+
+## Assinatura da Função
+
+```typescript
+export const formatPhoneInput = (number: string, withDdd?: boolean): string;
+```
+
+## Parâmetros
+
+- **number**: `string`  
+  O número de telefone que você deseja formatar.
+
+- **withDdd**: `boolean`  
+  Define se o formato deve incluir o DDD. O padrão é `true`.
+
+## Retorno
+
+- **string**:  
+  O número de telefone formatado de acordo com o tamanho do número e se o DDD está incluído. Se o número for inválido ou vazio, retorna o próprio número ou `-`.
+
+## Exemplo de Uso
+
+```tsx
+import { formatPhoneInput } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedPhoneWithDdd = formatPhoneInput('11987654321');
+const formattedPhoneWithoutDdd = formatPhoneInput('987654321', false);
+
+console.log(formattedPhoneWithDdd); // '(11) 98765-4321'
+console.log(formattedPhoneWithoutDdd); // '98765-4321'
+```
+
+## Descrição
+
+A função `formatPhoneInput` formata um número de telefone ou celular de acordo com as convenções brasileiras, considerando se o número inclui DDD e o tamanho do número. A formatação varia automaticamente para acomodar números de 8 a 11 dígitos. Se o número fornecido for inválido ou estiver vazio, a função retorna o próprio número ou um traço (`-`).

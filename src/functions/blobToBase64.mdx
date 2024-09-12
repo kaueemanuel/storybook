@@ -1,0 +1,42 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/blobToBase64" />
+
+# `blobToBase64`
+
+Uma função utilitária que transforma um objeto `Blob` (ou `File`) em uma string Base64.
+
+## Assinatura da Função
+
+```typescript
+export const blobToBase64 = (blob: Blob) => Promise<string>;
+```
+
+## Parâmetros
+
+- **blob**: `Blob`  
+  O arquivo em formato Blob que você deseja converter para uma string Base64.
+
+## Retorno
+
+- **Promise\<string\>**:  
+  A string Base64 correspondente ao conteúdo do Blob, apenas a parte necessária (depois da vírgula).
+
+## Exemplo de Uso
+
+```typescript
+import { blobToBase64 } from 'caminho-do-seu-arquivo-de-utilitarios';
+import split from 'lodash/split';
+
+const pdfBlob = new Blob([/* seus dados */], { type: 'application/pdf' });
+
+blobToBase64(pdfBlob).then(base64String => {
+  console.log(base64String);
+  // Agora você pode usar a string Base64, por exemplo, para exibir um arquivo PDF ou enviar para um servidor
+});
+```
+
+## Descrição
+
+A função `blobToBase64` converte um arquivo `Blob` (ou `File`) em uma string Base64. É particularmente útil para manipular arquivos em formatos binários que precisam ser transferidos ou armazenados como strings Base64.

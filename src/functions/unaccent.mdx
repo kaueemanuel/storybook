@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+import size from "lodash/size";
+
+// Informações Meta
+<Meta title="Functions/unaccent" />
+
+# `unaccent`
+
+Remove acentos de uma string e retorna o resultado sem acentuação.
+
+## Assinatura da Função
+
+```typescript
+function unaccent(source: string): string;
+```
+
+## Parâmetros
+
+- **source**: `string`  
+  A string da qual você deseja remover os acentos.
+
+## Retorno
+
+- **string**:  
+  A string sem acentos.
+
+## Exemplo de Uso
+
+```tsx
+import { unaccent } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const original = "Olá, você está bem?";
+const noAccents = unaccent(original);
+
+console.log(noAccents); // 'Ola, voce esta bem?'
+```
+
+## Descrição
+
+A função `unaccent` remove acentos de uma string, normalizando-a e removendo qualquer marca diacrítica (acentos) através da técnica de decomposição Unicode (`NFD`). Isso é útil para processar strings de texto que devem ser comparadas ou armazenadas sem acentuação.

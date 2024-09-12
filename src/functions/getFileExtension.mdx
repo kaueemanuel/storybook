@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getFileExtension" />
+
+# `getFileExtension`
+
+Retorna a extensão de um arquivo a partir do nome ou caminho do arquivo.
+
+## Assinatura da Função
+
+```typescript
+export function getFileExtension(filename?: string): string | null;
+```
+
+## Parâmetros
+
+- **filename**: `string`  
+  O caminho completo ou o nome do arquivo do qual você deseja obter a extensão.
+
+## Retorno
+
+- **string | null**:  
+  A extensão do arquivo, incluindo o ponto (`.`). Retorna `null` se o nome do arquivo estiver vazio.
+
+## Exemplo de Uso
+
+```tsx
+import { getFileExtension } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const extension = getFileExtension('document.pdf');
+const noExtension = getFileExtension('');
+
+console.log(extension); // '.pdf'
+console.log(noExtension); // null
+```
+
+## Descrição
+
+A função `getFileExtension` extrai a extensão de um arquivo a partir de seu nome ou caminho completo. A extensão inclui o ponto (`.`). Se o nome do arquivo estiver vazio, a função retorna `null`. Isso é útil para determinar o tipo de arquivo com base na extensão.

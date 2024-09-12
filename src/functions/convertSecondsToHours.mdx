@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+<Meta title="Functions/convertSecondsToHours" />
+
+# `convertSecondsToHours`
+
+Converte segundos em um formato `HH:MM:SS`.
+
+## Assinatura da Função
+
+```typescript
+function convertSecondsToHours(duration: number): string;
+```
+
+## Parâmetros
+
+- **duration**: `number`  
+  A quantidade de segundos a serem convertidos.
+
+## Retorno
+
+- **string**:  
+  A duração convertida no formato `00:00:00`.
+
+## Exemplo de Uso
+
+```tsx
+import { convertSecondsToHours } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const timeDisplay = convertSecondsToHours(3600);
+
+console.log(timeDisplay); // '01:00:00'
+```
+
+## Descrição
+
+A função `convertSecondsToHours` converte uma quantidade de segundos em uma string no formato `HH:MM:SS`.

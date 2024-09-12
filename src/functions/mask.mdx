@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/mask" />
+
+# `mask`
+
+Aplica uma máscara sobre uma string ou número, formatando-o de acordo com o padrão fornecido.
+
+## Assinatura da Função
+
+```typescript
+export function mask(value: string | number, pattern: string): string;
+```
+
+## Parâmetros
+
+- **value**: `string | number`  
+  O valor que você deseja formatar com a máscara.
+
+- **pattern**: `string`  
+  A máscara que define o formato desejado. Use `#` para indicar onde os caracteres do valor devem ser inseridos.
+
+## Retorno
+
+- **string**:  
+  A string formatada de acordo com o padrão fornecido.
+
+## Exemplo de Uso
+
+```tsx
+import { mask } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedPhone = mask('41997899089', '(##) #####-####');
+const formattedDate = mask('01012023', '##/##/####');
+
+console.log(formattedPhone); // '(41) 99789-9089'
+console.log(formattedDate);  // '01/01/2023'
+```
+
+## Descrição
+
+A função `mask` aplica uma máscara sobre uma string ou número, formatando o valor conforme o padrão fornecido. A máscara utiliza o caractere `#` para indicar onde os dígitos ou caracteres do valor devem ser inseridos. Essa função é útil para formatar números de telefone, datas, CPFs, e outros valores que requerem um formato específico.

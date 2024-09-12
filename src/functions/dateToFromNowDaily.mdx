@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/dateToFromNowDaily" />
+
+# `dateToFromNowDaily`
+
+Converte uma data numérica para um texto descritivo, utilizando formatações como "Hoje", "Ontem" e períodos relativos.
+
+## Assinatura da Função
+
+```typescript
+export const dateToFromNowDaily = (myDate: string): string;
+```
+
+## Parâmetros
+
+- **myDate**: `string`  
+  A data que será convertida.
+
+## Retorno
+
+- **string**:  
+  A data formatada em texto, como "Hoje", "Ontem", ou uma descrição relativa como "há 2 dias".
+
+## Exemplo de Uso
+
+```tsx
+import { dateToFromNowDaily } from 'caminho-do-seu-arquivo-de-utilitarios';
+import moment from 'moment/moment';
+
+const formattedDate = dateToFromNowDaily('2023-08-22');
+
+console.log(formattedDate); // "Há 2 dias" ou "Hoje", dependendo da data atual
+```
+
+## Descrição
+
+A função `dateToFromNowDaily` utiliza a biblioteca `moment` para converter uma data em uma descrição textual, como "Hoje", "Ontem", ou uma descrição relativa como "há 2 dias". Isso é útil para exibir datas de maneira amigável e fácil de entender para os usuários.

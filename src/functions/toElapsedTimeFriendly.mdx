@@ -1,0 +1,54 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import {
+  format,
+  differenceInMinutes,
+  differenceInHours,
+  differenceInDays,
+} from "date-fns";
+import { TFunction } from "i18next";
+
+// Informações Meta
+<Meta title="Functions/toElapsedTimeFriendly" />
+
+# `toElapsedTimeFriendly`
+
+Converte uma diferença de tempo entre duas datas em um formato amigável e legível.
+
+## Assinatura da Função
+
+```typescript
+export function toElapsedTimeFriendly(
+  from: Date,
+  to: Date
+): string;
+```
+
+## Parâmetros
+
+- **from**: `Date`  
+  A data de início para calcular a diferença de tempo.
+
+- **to**: `Date`  
+  A data final para calcular a diferença de tempo.
+
+## Retorno
+
+- **string**:  
+  Uma string formatada representando o tempo decorrido entre as duas datas de forma amigável, como "há 5 minutos", "há 2 horas", ou a data no formato "dd/MM/yyyy" se a diferença for maior que 31 dias.
+
+## Exemplo de Uso
+
+```tsx
+import { toElapsedTimeFriendly } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const from = new Date();
+const to = new Date(Date.now() - 90 * 60 * 1000); // 1 hora e 30 minutos atrás
+
+const elapsedTime = toElapsedTimeFriendly(from, to);
+
+console.log(elapsedTime); // "há 1 hora"
+```
+
+## Descrição
+
+A função `toElapsedTimeFriendly` calcula o tempo decorrido entre duas datas e o formata em uma string amigável ao usuário, como "há alguns minutos", "há horas", ou "há dias". Dependendo da diferença, a função utiliza traduções personalizadas fornecidas pelo `i18next` para garantir que o texto seja corretamente localizado e formatado de acordo com as regras de pluralização.

@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+// Informações Meta
+
+<Meta title="Functions/base64ToBlob" />
+
+# `base64ToBlob`
+
+Uma função utilitária que converte um URI de dados codificado em Base64 para um objeto `Blob`.
+
+## Assinatura da Função
+
+```typescript
+export async function base64ToBlob(dataURI: string): Promise<Blob>
+```
+
+## Parâmetros
+
+- **dataURI**: `string`  
+  O URI de dados codificado em Base64 que você deseja converter para um objeto `Blob`.
+
+## Retorno
+
+- **Blob**:  
+  O objeto `Blob` resultante que contém os dados binários representados pelo `dataURI`.
+
+## Exemplo de Uso
+
+```typescript
+import { base64ToBlob } from "caminho-do-seu-arquivo-de-utilitarios"
+
+const dataURI = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."
+base64ToBlob(dataURI).then((blob) => {
+  console.log(blob)
+  // Agora você pode usar o blob, por exemplo, para exibir uma imagem ou fazer upload
+})
+```
+
+## Descrição
+
+A função `base64ToBlob` recebe uma string URI de dados codificada em Base64 como entrada, decodifica e converte em um objeto `Blob`. Isso é particularmente útil quando você precisa manipular dados de imagem ou outros dados binários representados no formato Base64 e trabalhá-los em sua forma binária bruta.

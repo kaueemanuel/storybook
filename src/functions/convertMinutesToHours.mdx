@@ -1,0 +1,37 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+<Meta title="Functions/convertMinutesToHours" />
+
+# `convertMinutesToHours`
+
+Converte minutos em um formato `HH:MM:SS`.
+
+## Assinatura da Função
+
+```typescript
+function convertMinutesToHours(duration: number): string;
+```
+
+## Parâmetros
+
+- **duration**: `number`  
+  A quantidade de minutos a serem convertidos.
+
+## Retorno
+
+- **string**:  
+  A duração convertida no formato `00:00:00`.
+
+## Exemplo de Uso
+
+```tsx
+import { convertMinutesToHours } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const timeDisplay = convertMinutesToHours(60);
+
+console.log(timeDisplay); // '01:00:00'
+```
+
+## Descrição
+
+A função `convertMinutesToHours` converte uma quantidade de minutos em uma string no formato `HH:MM:SS`.

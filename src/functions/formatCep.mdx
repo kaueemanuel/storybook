@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatCep" />
+
+# `formatCep`
+
+Formata um código postal (CEP) no formato padrão brasileiro.
+
+## Assinatura da Função
+
+```typescript
+export const formatCep = (cep: string): string;
+```
+
+## Parâmetros
+
+- **cep**: `string`  
+  O código postal que você deseja formatar.
+
+## Retorno
+
+- **string**:  
+  O CEP formatado. Se o valor fornecido estiver vazio, retorna `-`.
+
+## Exemplo de Uso
+
+```tsx
+import { formatCep } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedCep = formatCep('96530000');
+
+console.log(formattedCep); // '96530-000'
+```
+
+## Descrição
+
+A função `formatCep` formata um código postal brasileiro (CEP) para o padrão `XXXXX-XXX`. Se o valor estiver vazio, a função retorna um traço (`-`). Essa função remove qualquer caractere não numérico e então aplica a formatação adequada ao CEP.

@@ -1,0 +1,115 @@
+import { ArgsTable, Meta, Canvas, Story } from "@storybook/blocks"
+
+import { Popper } from "./Popper"
+import * as PopperStories from "./Popper.stories.tsx"
+
+<Meta title="Components/Utils/Popper/Docs" />
+
+# Popper
+
+### API
+
+<ArgsTable of={Popper} />
+
+## Usage
+
+<p>
+  A Popper can be used to display some content on top of another. It's an
+  alternative to react-popper. So all options are found here{" "}
+  <a href="https://mui.com/material-ui/react-popper/" target="_blank">
+    Popper Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the popper you must use the `Popper`, to do this import it into
+  the scope of your view component.
+</p>
+
+```tsx
+import { Popper } from "pgv-lib/ui/components"
+;<Popper>children</Popper>
+```
+
+```tsx
+import {
+  Popper,
+  PopperHeader,
+  PopperContent,
+} from "pgv-lib/ui/components/Popper"
+;<Popper>
+  <PopperHeader />
+  <PopperContent></PopperContent>
+</Popper>
+```
+
+<p>
+  To make use of the custom popper you must create a styled `Popper` and use it.
+</p>
+
+```tsx
+import { styled } from "@mui/material"
+import {
+  Popper,
+  PopperHeader,
+  PopperContent,
+  PopperActions,
+} from "pgv-lib/ui/components/Popper"
+
+const PopperStyled = styled(Popper)({
+  "& .MuiPopper-container": {
+    "& .MuiPaper-root": {
+      background: "linear-gradient(90deg, #FFF 30%, #edf3f9 100%)",
+    },
+  },
+  '&[data-popper-placement*="bottom"]': {
+    "& .MuiPopper-arrow::after": {
+      background: "linear-gradient(45deg, transparent 40%, #edf3f9 60%)",
+    },
+  },
+  '&[data-popper-placement*="top"]': {
+    "& .MuiPopper-arrow::after": {
+      background: "linear-gradient(45deg, #edf3f9 40%, transparent 60%)",
+    },
+  },
+  '&[data-popper-placement*="right"]': {
+    "& .MuiPopper-arrow::after": {
+      background: "linear-gradient(-135deg, transparent 40%, #edf3f9 60%)",
+    },
+  },
+  '&[data-popper-placement*="left"]': {
+    "& .MuiPopper-arrow::after": {
+      background: "linear-gradient(-135deg, #edf3f9 40%, transparent 60%)",
+    },
+  },
+})
+
+<PopperStyled>
+  <PopperHeader />
+  <PopperContent></PopperContent>
+  <PopperActions></PopperActions>
+</PopperStyled>
+```
+
+# Limitations
+
+# IconButton
+
+<p>
+  A IconButton it gets lost in the anchor reference when using with Popper. So,
+  it's necessary to create a div around the IconButton with the anchorRef by
+  Popper to don't get lost the anchor reference.
+</p>
+
+```tsx
+import { Popper } from "pgv-lib/ui/components"
+import { IconButton } from "pgv-lib/ui/components"
+
+const anchorRef = useRef(null)
+
+<div ref={anchorRef} style={{ width: "fit-content", height: "fit-content" }}>
+  <IconButton />
+</div>
+
+<Popper anchorEl={anchorRef.current}>children</Popper>
+```

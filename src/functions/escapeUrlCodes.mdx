@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/escapeUrlCodes" />
+
+# `escapeUrlCodes`
+
+Busca por um conjunto de caracteres em uma URL e substitui esses valores pelos seus respectivos caracteres de escape.
+
+## Assinatura da Função
+
+```typescript
+export const escapeUrlCodes = (string: string): string;
+```
+
+## Parâmetros
+
+- **string**: `string`  
+  A string que representa a URL a ser processada.
+
+## Retorno
+
+- **string**:  
+  A URL processada com os caracteres substituídos pelos seus respectivos códigos de escape.
+
+## Exemplo de Uso
+
+```tsx
+import { escapeUrlCodes } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const url = 'https://example.com/search?q=hello world&category=books';
+const escapedUrl = escapeUrlCodes(url);
+
+console.log(escapedUrl); // 'https://example.com/search?q=hello%20world&category=books'
+```
+
+## Descrição
+
+A função `escapeUrlCodes` percorre uma string que representa uma URL e substitui caracteres específicos pelos seus respectivos códigos de escape. Isso é útil para garantir que a URL seja válida e que caracteres especiais sejam corretamente interpretados ao serem transmitidos na web.

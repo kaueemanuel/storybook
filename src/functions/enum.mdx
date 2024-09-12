@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/enum" />
+
+# `Enum`
+
+Cria um objeto enum a partir de um array de strings.
+
+## Assinatura da Função
+
+```typescript
+export function Enum(values: string[]): Object;
+```
+
+## Parâmetros
+
+- **values**: `string[]`  
+  Um array de strings que representam os valores do enum.
+
+## Retorno
+
+- **Object**:  
+  Um objeto onde cada string no array é uma chave e o índice correspondente no array é o valor.
+
+## Exemplo de Uso
+
+```tsx
+import { Enum } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const myEnum = new Enum(['FOO', 'BAR', 'BAZ']);
+
+console.log(myEnum); // { FOO: 0, BAR: 1, BAZ: 2 }
+console.log(myEnum.FOO); // 0
+```
+
+## Descrição
+
+A função `Enum` cria um objeto que simula um enum, atribuindo a cada valor do array passado como argumento uma chave e um índice correspondente. Isso é útil quando você deseja criar enums de maneira dinâmica em JavaScript/TypeScript.

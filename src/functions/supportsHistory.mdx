@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/supportsHistory" />
+
+# `supportsHistory`
+
+Verifica se o navegador suporta a API de histórico HTML5, especificamente o método `pushState`.
+
+## Assinatura da Função
+
+```typescript
+export const supportsHistory = (): boolean;
+```
+
+## Parâmetros
+
+Esta função não recebe parâmetros.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o navegador suportar a API de histórico HTML5 (`pushState`), caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { supportsHistory } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+if (supportsHistory()) {
+  console.log("O navegador suporta a API de histórico HTML5.");
+} else {
+  console.log("O navegador NÃO suporta a API de histórico HTML5.");
+}
+```
+
+## Descrição
+
+A função `supportsHistory` verifica se o navegador atual suporta a API de histórico HTML5, especificamente o método `pushState`. Essa função é útil para determinar se a aplicação pode utilizar o histórico do navegador para manipular a URL sem recarregar a página.

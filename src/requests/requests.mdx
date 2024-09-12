@@ -1,0 +1,97 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+<Meta title="Requests/Docs" />
+
+# Requests
+
+Este conjunto de funções facilita a realização de requests HTTP utilizando os métodos `GET`, `POST`, `DELETE`, `PUT` e `PATCH`. Elas são ideais para interagir com APIs RESTful, permitindo realizar operações de leitura, criação, atualização e exclusão de dados.
+
+
+## GET
+
+```typescript
+import { get } from "@pgv/lib/requests"
+
+const { body } = await get({
+  endpoint: `url`,
+  port: false,
+  showMessages: false,
+})
+```
+
+#### GET com filtros
+
+```typescript
+import { get } from "@pgv/lib/requests"
+
+import { toQueryParams } from "@pgv/lib/functions"
+
+const { body } = await get({
+  endpoint: `url?${toQueryParams(params, { keepArrayParams: ["order"] })}`,
+  port: false,
+  showMessages: false,
+})
+```
+
+#### GET by id
+
+```typescript
+import { get } from "@pgv/lib/requests"
+
+const { body } = await get({
+  endpoint: `url?id=${id}`,
+  port: false,
+  showMessages: false,
+})
+```
+
+## POST
+
+```typescript
+import { post } from "@pgv/lib/requests"
+
+const { body } = await post({
+  endpoint: `url`,
+  data: data,
+  port: false,
+  showMessages: false,
+})
+```
+
+## PUT
+
+```typescript
+import { put } from "@pgv/lib/requests"
+
+const { body } = await put({
+  endpoint: `url`,
+  data: data,
+  port: false,
+  showMessages: false,
+})
+```
+
+## DELETE
+
+```typescript
+import { del } from "@pgv/lib/requests"
+
+const { body } = await del({
+  endpoint: `url?id=${id}`,
+  port: false,
+  showMessages: false,
+})
+```
+
+## PATCH
+
+```typescript
+import { patch } from "@pgv/lib/requests"
+
+const { body } = await patch({
+  endpoint: `url`,
+  data: data,
+  port: false,
+  showMessages: false,
+})
+```

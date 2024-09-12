@@ -1,0 +1,47 @@
+/* material */
+@import url("@fontsource/roboto/300.css");
+@import url("@fontsource/roboto/400.css");
+@import url("@fontsource/roboto/500.css");
+@import url("@fontsource/roboto/700.css");
+@import url("@fontsource/material-icons");
+
+/* swipper */
+@import url("swiper/swiper-bundle.css");
+@import url("swiper/css");
+@import url("swiper/css/bundle");
+
+/* draft */
+@import url("react-draft-wysiwyg/dist/react-draft-wysiwyg.css");
+
+/* Red Hat Display Font */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* Date Picker */
+@import url("react-datepicker/dist/react-datepicker.css");
+
+/* Timeline */
+@import url("primereact/resources/themes/md-light-indigo/theme.css");
+
+/* Material Symbols */
+@font-face {
+  font-family: "Material Symbols Rounded";
+  font-style: normal;
+  font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/material-symbols@0.20.0/material-symbols-rounded.woff2") format("woff2");
+}
+
+.material-symbols {
+  font-family: "Material Symbols Rounded";
+  user-select: none;
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}

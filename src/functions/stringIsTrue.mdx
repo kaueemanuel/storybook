@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import toString from "lodash/toString";
+
+// Informações Meta
+<Meta title="Functions/stringIsTrue" />
+
+# `stringIsTrue`
+
+Verifica se uma string ou valor é equivalente a `true`.
+
+## Assinatura da Função
+
+```typescript
+export const stringIsTrue = (str: any): boolean;
+```
+
+## Parâmetros
+
+- **str**: `any`  
+  O valor que você deseja verificar se é equivalente a `true`. Pode ser um booleano, string ou número.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o valor for igual a `true`, à string `"true"`, ao número `1`, ou à string `"1"`. Caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { stringIsTrue } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+console.log(stringIsTrue(true)); // true
+console.log(stringIsTrue("true")); // true
+console.log(stringIsTrue(1)); // true
+console.log(stringIsTrue("1")); // true
+console.log(stringIsTrue("false")); // false
+```
+
+## Descrição
+
+A função `stringIsTrue` verifica se um valor fornecido é equivalente a `true`. Ela retorna `true` se o valor for exatamente `true`, a string `"true"`, o número `1`, ou a string `"1"`. Isso é útil para casos onde você precisa validar se um valor é considerado "verdadeiro" em diferentes formatos.

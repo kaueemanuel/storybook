@@ -1,0 +1,48 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/convertFriendlySeconds" />
+
+# `convertFriendlySeconds`
+
+Converte segundos em um formato de tempo amigável.
+
+## Assinatura da Função
+
+```typescript
+function convertFriendlySeconds(
+  duration: number, 
+  spaceBetween?: boolean, 
+  withSeconds?: boolean
+): string;
+```
+
+## Parâmetros
+
+- **duration**: `number`  
+  A quantidade de segundos a serem convertidos.
+
+- **spaceBetween**: `boolean`  
+  Se deve ou não haver espaços entre horas, minutos e segundos. O padrão é `false`.
+
+- **withSeconds**: `boolean`  
+  Se deve ou não mostrar os segundos. O padrão é `false`.
+
+## Retorno
+
+- **string**:  
+  A representação amigável da duração no formato `0h0min`.
+
+## Exemplo de Uso
+
+```tsx
+import { convertFriendlySeconds } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const timeDisplay = convertFriendlySeconds(3600, true, true);
+
+console.log(timeDisplay); // '1 h 0 min 0 s'
+```
+
+## Descrição
+
+A função `convertFriendlySeconds` converte uma quantidade de segundos em uma string amigável, formatando como horas, minutos e, opcionalmente, segundos.

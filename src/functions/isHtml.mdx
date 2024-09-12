@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/isHtml" />
+
+# `isHtml`
+
+Verifica se uma string de texto contém tags HTML.
+
+## Assinatura da Função
+
+```typescript
+export function isHtml(text: string): boolean;
+```
+
+## Parâmetros
+
+- **text**: `string`  
+  A string de texto que você deseja verificar se contém HTML.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se a string contiver tags HTML, caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { isHtml } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const textWithHtml = '<div>Hello, world!</div>';
+const textWithoutHtml = 'Hello, world!';
+
+console.log(isHtml(textWithHtml)); // true
+console.log(isHtml(textWithoutHtml)); // false
+```
+
+## Descrição
+
+A função `isHtml` verifica se uma string de texto contém tags HTML, utilizando uma expressão regular. Essa função é útil para identificar se um texto inclui elementos HTML, permitindo que você tome decisões baseadas na presença ou ausência de HTML.

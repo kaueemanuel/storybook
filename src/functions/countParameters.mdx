@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+import size from "lodash/size";
+
+// Informações Meta
+<Meta title="Functions/countParameters" />
+
+# `countParameters`
+
+Conta quantas vezes um caractere específico aparece em um texto.
+
+## Assinatura da Função
+
+```typescript
+function countParameters(text: string = "", character: string = ""): number;
+```
+
+## Parâmetros
+
+- **text**: `string`  
+  O texto em que você deseja contar as ocorrências de um caractere.
+
+- **character**: `string`  
+  O caractere cuja quantidade de ocorrências você deseja contar no texto.
+
+## Retorno
+
+- **number**:  
+  O número de vezes que o caractere especificado aparece no texto. Retorna `0` se o texto ou o caractere estiver vazio.
+
+## Exemplo de Uso
+
+```tsx
+import { countParameters } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const text = "Olá, mundo!";
+const characterCount = countParameters(text, "o");
+
+console.log(characterCount); // 2
+```
+
+## Descrição
+
+A função `countParameters` conta o número de vezes que um caractere específico aparece em uma string de texto. Isso é útil para casos em que você precisa saber a frequência de um determinado caractere em uma string. Se o texto ou o caractere estiver vazio, a função retorna `0`.

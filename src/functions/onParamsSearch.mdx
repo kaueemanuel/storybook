@@ -1,0 +1,51 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/Datagrid/onParamsSearch" />
+
+# `onParamsSearch`
+
+Gera os parâmetros de busca a partir de um valor de pesquisa e colunas.
+
+## Assinatura da Função
+
+```typescript
+export const onParamsSearch = (
+  value: string,
+  columns: readonly DatagridColDef[]
+): DatagridParamsFilterType;
+```
+
+## Parâmetros
+
+- **value**: `string`  
+  O valor de pesquisa.
+
+- **columns**: `readonly DatagridColDef[]`  
+  As colunas do grid que são pesquisáveis.
+
+## Retorno
+
+- **DatagridParamsFilterType**:  
+  Os parâmetros de filtro gerados a partir da pesquisa.
+
+## Exemplo de Uso
+
+```tsx
+import { onParamsSearch } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { DatagridColDef } from 'caminho-do-seu-arquivo-de-tipos';
+
+const searchValue = 'John';
+const columns: readonly DatagridColDef[] = [
+  { field: 'name', searchable: true },
+  { field: 'email', searchable: true },
+];
+
+const searchParams = onParamsSearch(searchValue, columns);
+
+console.log(searchParams); // { Connector: 'Or', Values: [{ PropertyName: 'name', Value: 'John', Operation: 'Contains' }, { PropertyName: 'email', Value: 'John', Operation: 'Contains' }] }
+```
+
+## Descrição
+
+A função `onParamsSearch` converte um valor de pesquisa em parâmetros de filtro que podem ser utilizados em um grid ou tabela de dados. Ela percorre as colunas configuradas como pesquisáveis e gera uma estrutura de filtro que pode ser utilizada para realizar buscas em dados.

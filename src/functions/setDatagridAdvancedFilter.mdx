@@ -1,0 +1,79 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/Datagrid/setDatagridAdvancedFilter" />
+
+# `setDatagridAdvancedFilter`
+
+Configura o filtro avançado do datagrid e atualiza os parâmetros de acordo com os filtros avançados e de pesquisa.
+
+## Assinatura da Função
+
+```typescript
+export function setDatagridAdvancedFilter<T extends DatagridStoreBase = any>(
+  filter: DatagridParamsFilterType,
+  set: (partial: (state: T) => any, replace?: boolean | undefined) => void,
+  get: () => T
+): void;
+```
+
+## Parâmetros
+
+- **filter**: `DatagridParamsFilterType`  
+  O filtro avançado a ser aplicado.
+
+- **set**: `(partial: (state: T) => any, replace?: boolean | undefined) => void`  
+  Função para atualizar o estado do store.
+
+- **get**: `() => T`  
+  Função para obter o estado atual do store.
+
+## Retorno
+
+- **void**:  
+  A função não retorna nada.
+
+## Exemplo de Uso com Mock do Zustand
+
+```tsx
+import { setDatagridAdvancedFilter } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { DatagridParamsFilterType, DatagridStoreBase } from 'caminho-do-seu-arquivo-de-tipos';
+
+// Mock do Zustand's set e get functions
+
+interface MockState extends DatagridStoreBase {
+  searchFilter: DatagridParamsFilterType;
+  advancedFilter: DatagridParamsFilterType;
+  params: { Filter?: DatagridParamsFilterType };
+}
+
+let mockState: MockState = {
+  searchFilter: { Connector: 'Or', Values: [] },
+  advancedFilter: { Connector: 'And', Values: [] },
+  params: { Filter: undefined },
+};
+
+function mockSet(update: (state: MockState) => MockState) {
+  mockState = update(mockState);
+}
+
+function mockGet(): MockState {
+  return mockState;
+}
+
+const advancedFilter: DatagridParamsFilterType = {
+  Connector: 'And',
+  Values: [{ PropertyName: 'age', Value: 30 }],
+};
+
+setDatagridAdvancedFilter(advancedFilter, mockSet, mockGet);
+
+console.log(mockState.params.Filter); // Exibe o filtro combinado de `searchFilter` e `advancedFilter`
+
+// Resultado esperado: 
+// { Connector: 'And', Values: [{ PropertyName: 'age', Value: 30 }] }
+```
+
+## Descrição
+
+A função `setDatagridAdvancedFilter` configura o filtro avançado do datagrid e atualiza os parâmetros de acordo com os filtros avançados e de pesquisa aplicados. Se ambos os filtros estiverem vazios, a função remove o filtro dos parâmetros. Caso contrário, ela combina os valores dos filtros para definir os parâmetros de filtragem.

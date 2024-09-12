@@ -1,0 +1,46 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import flow from "lodash/fp/flow";
+import join from "lodash/fp/join";
+import split from "lodash/fp/split";
+
+// Informações Meta
+<Meta title="Functions/universalPhone" />
+
+# `universalPhone`
+
+Formata um número de telefone removendo caracteres especiais e adiciona o código da região, tornando-o universal.
+
+## Assinatura da Função
+
+```typescript
+export const universalPhone = (region: string, phone: string): string;
+```
+
+## Parâmetros
+
+- **region**: `string`  
+  O código da região (por exemplo, o código do país) que você deseja adicionar ao número de telefone.
+
+- **phone**: `string`  
+  O número de telefone que você deseja formatar, removendo todos os caracteres especiais.
+
+## Retorno
+
+- **string**:  
+  O número de telefone formatado com o código da região e sem caracteres especiais.
+
+## Exemplo de Uso
+
+```tsx
+import { universalPhone } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const regionCode = "+1";
+const phoneNumber = "(123) 456-7890";
+const formattedPhone = universalPhone(regionCode, phoneNumber);
+
+console.log(formattedPhone); // '+11234567890'
+```
+
+## Descrição
+
+A função `universalPhone` formata um número de telefone removendo todos os caracteres especiais (como parênteses, hífens e espaços) e adiciona o código da região especificado, tornando o número "universal". Isso é útil para garantir que os números de telefone sejam armazenados e manipulados de forma consistente, independentemente de como foram originalmente formatados.

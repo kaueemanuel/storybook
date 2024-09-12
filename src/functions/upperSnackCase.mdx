@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import flow from "lodash/fp/flow";
+import snakeCase from "lodash/fp/snakeCase";
+import toUpper from "lodash/fp/toUpper";
+
+// Informações Meta
+<Meta title="Functions/upperSnakeCase" />
+
+# `upperSnakeCase`
+
+Converte uma string separada por espaços em uma string em caixa alta e no formato "snake_case".
+
+## Assinatura da Função
+
+```typescript
+export const upperSnakeCase = (string: string): string;
+```
+
+## Parâmetros
+
+- **string**: `string`  
+  A string que você deseja converter para o formato "snake_case" em caixa alta.
+
+## Retorno
+
+- **string**:  
+  A string convertida para o formato "snake_case" em caixa alta.
+
+## Exemplo de Uso
+
+```tsx
+import { upperSnakeCase } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const result = upperSnakeCase('cat and dog');
+
+console.log(result); // 'CAT_AND_DOG'
+```
+
+## Descrição
+
+A função `upperSnakeCase` converte uma string separada por espaços em uma string no formato "snake_case" (palavras separadas por sublinhados) e a transforma em caixa alta. Isso é útil para criar constantes ou identificadores que seguem a convenção de nomes "snake_case" em maiúsculas.

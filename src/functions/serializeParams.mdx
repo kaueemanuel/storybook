@@ -1,0 +1,66 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import {
+  isArray,
+  isBoolean,
+  isEmpty,
+  isNil,
+  isNumber,
+  isObject,
+  map,
+} from "lodash";
+
+// Informações Meta
+<Meta title="Functions/toQueryParams" />
+
+# `toQueryParams`
+
+Converte um objeto em uma string de parâmetros de consulta (query string), com opções para manipulação de arrays.
+
+## Assinatura da Função
+
+```typescript
+export const toQueryParams = (
+  dataObject: Record<string, any>,
+  options?: {
+    keepArrayParams?: string[] | null
+  }
+): string;
+```
+
+## Parâmetros
+
+- **dataObject**: `Record<string, any>`  
+  O objeto que você deseja converter em uma string de parâmetros de consulta.
+
+- **options**: `{ keepArrayParams?: string[] | null }`  
+  Um objeto de configuração opcional. A propriedade `keepArrayParams` especifica quais chaves de array devem ser mantidas como arrays na query string. O padrão é `["order"]`.
+
+## Retorno
+
+- **string**:  
+  A string de parâmetros de consulta (query string) gerada a partir do objeto fornecido. Retorna uma string vazia se o objeto estiver vazio ou nulo.
+
+## Exemplo de Uso
+
+```tsx
+import { toQueryParams } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const params = toQueryParams({
+  name: "John Doe",
+  age: 30,
+  tags: ["developer", "designer"],
+});
+
+console.log(params); // 'name=John%20Doe&age=30&tags=developer&tags=designer'
+
+const paramsWithOptions = toQueryParams(
+  { order: ["asc", "desc"], filter: "active" },
+  { keepArrayParams: ["order"] }
+);
+
+console.log(paramsWithOptions); // 'order=%5B%22asc%22%2C%22desc%22%5D&filter=active'
+```
+
+## Descrição
+
+A função `toQueryParams` converte um objeto em uma string de parâmetros de consulta (query string). Ela permite a inclusão de opções para controlar como os arrays são manipulados na string gerada. Por padrão, arrays são separados em múltiplos parâmetros com a mesma chave, a menos que especificado em `keepArrayParams` para mantê-los como arrays no resultado final.

@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+
+// Informações Meta
+<Meta title="Functions/replaceEscaped" />
+
+# `replaceEscaped`
+
+Converte um texto escapado para ser usado em JSON ou como texto normal.
+
+## Assinatura da Função
+
+```typescript
+export const replaceEscaped = (str: string, isJson: boolean): string;
+```
+
+## Parâmetros
+
+- **str**: `string`  
+  O texto que você deseja converter ou "des-escapar".
+
+- **isJson**: `boolean`  
+  Define se a conversão deve ser para um objeto JSON (`true`) ou para um texto normal (`false`).
+
+## Retorno
+
+- **string**:  
+  O texto convertido de acordo com a necessidade de JSON ou texto normal.
+
+## Exemplo de Uso
+
+```tsx
+import { replaceEscaped } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const jsonString = replaceEscaped('{"name": "John\\nDoe"}', true);
+const normalString = replaceEscaped('Hello \\"World\\"', false);
+
+console.log(jsonString); // '{"name": "John\nDoe"}'
+console.log(normalString); // 'Hello \"World\"'
+```
+
+## Descrição
+
+A função `replaceEscaped` converte um texto escapado de acordo com a necessidade, seja para JSON ou texto normal. Se `isJson` for `true`, a função converte os caracteres escapados para suas representações adequadas para um objeto JSON. Se `isJson` for `false`, a função realiza substituições para garantir que o texto seja interpretado corretamente como texto normal, escapando barras invertidas e aspas duplas quando necessário.

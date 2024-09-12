@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/trimCpfCnpj" />
+
+# `trimCpfCnpj`
+
+Remove pontos, barras, hífens e sublinhados de uma string de CPF ou CNPJ, retornando apenas os números.
+
+## Assinatura da Função
+
+```typescript
+export const trimCpfCnpj = (str: string): string;
+```
+
+## Parâmetros
+
+- **str**: `string`  
+  A string de CPF ou CNPJ que você deseja "limpar", removendo os caracteres especiais.
+
+## Retorno
+
+- **string**:  
+  A string de CPF ou CNPJ sem pontos, barras, hífens ou sublinhados, contendo apenas os números.
+
+## Exemplo de Uso
+
+```tsx
+import { trimCpfCnpj } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const cpf = "123.456.789-09";
+const cleanedCpf = trimCpfCnpj(cpf);
+
+console.log(cleanedCpf); // '12345678909'
+```
+
+## Descrição
+
+A função `trimCpfCnpj` remove pontos (`.`), barras (`/`), hífens (`-`) e sublinhados (`_`) de uma string de CPF ou CNPJ, retornando apenas os números. Isso é útil quando você precisa trabalhar com CPF ou CNPJ sem formatação, como para validações ou armazenamento em banco de dados.

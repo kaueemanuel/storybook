@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/bytesToMegabytes" />
+
+# `bytesToMegabytes`
+
+Converte um valor em bytes para megabytes.
+
+## Assinatura da Função
+
+```typescript
+export const bytesToMegabytes = (bytes: number): number;
+```
+
+## Parâmetros
+
+- **bytes**: `number`  
+  O valor em bytes que você deseja converter para megabytes.
+
+## Retorno
+
+- **number**:  
+  O valor convertido em megabytes.
+
+## Exemplo de Uso
+
+```tsx
+import { bytesToMegabytes } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const fileSizeInBytes = 10485760; // 10 MB em bytes
+const fileSizeInMegabytes = bytesToMegabytes(fileSizeInBytes);
+
+console.log(fileSizeInMegabytes); // 10
+```
+
+## Descrição
+
+A função `bytesToMegabytes` converte um valor numérico de bytes para megabytes, dividindo o valor por `1024 * 1024`. Isso é útil para exibir ou trabalhar com tamanhos de arquivos em uma unidade mais legível, como megabytes.

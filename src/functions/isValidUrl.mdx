@@ -1,0 +1,44 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/isValidUrl" />
+
+# `isValidUrl`
+
+Verifica se uma string é uma URL válida e retorna um objeto com o resultado da validação e a URL.
+
+## Assinatura da Função
+
+```typescript
+export function isValidUrl(checkUrl: string): { valid: boolean, url: URL | null };
+```
+
+## Parâmetros
+
+- **checkUrl**: `string`  
+  A string que você deseja verificar se é uma URL válida.
+
+## Retorno
+
+- **\{ valid: boolean, url: URL | null \}**:  
+  Um objeto contendo:
+  - `valid`: Um booleano que indica se a URL é válida (`true`) ou não (`false`).
+  - `url`: Um objeto `URL` se a URL for válida, ou `null` se não for.
+
+## Exemplo de Uso
+
+```tsx
+import { isValidUrl } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const { valid, url } = isValidUrl('https://www.example.com');
+
+if (valid) {
+  console.log('URL válida:', url.href);
+} else {
+  console.log('URL inválida');
+}
+```
+
+## Descrição
+
+A função `isValidUrl` verifica se uma string fornecida é uma URL válida, tentando criar um objeto `URL`. Se a criação do objeto `URL` falhar, a função retorna `valid: false` e `url: null`. Se for bem-sucedida, ela verifica se o protocolo é `http` ou `https` e retorna um objeto indicando a validade da URL e a URL em si.

@@ -1,0 +1,48 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/validateCoordinates" />
+
+# `validateCoordinates`
+
+Valida coordenadas geográficas (latitude e longitude) com base em expressões regulares.
+
+## Assinatura da Função
+
+```typescript
+export function validateCoordinates({ latitude, longitude }: { latitude?: number; longitude?: number }): boolean;
+```
+
+## Parâmetros
+
+- **coordinates**: `Object`  
+  Objeto contendo as coordenadas a serem validadas.
+
+  - **latitude?**: `number`  
+    Latitude a ser validada. Pode ser `undefined`.
+
+  - **longitude?**: `number`  
+    Longitude a ser validada. Pode ser `undefined`.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se ambas as coordenadas (ou apenas a coordenada fornecida) forem válidas de acordo com as expressões regulares. Caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { validateCoordinates } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const coordinates = { latitude: 45.123456, longitude: -93.123456 };
+const isValid = validateCoordinates(coordinates);
+
+console.log(isValid); // true ou false dependendo da validade das coordenadas
+```
+
+## Descrição
+
+A função `validateCoordinates` é usada para verificar a validade de coordenadas geográficas (latitude e longitude) utilizando expressões regulares. Ela aceita um objeto com latitude e longitude, e retorna `true` se as coordenadas forem válidas conforme os padrões definidos para latitude e longitude. Caso contrário, retorna `false`.
+
+- Latitude deve estar entre -90 e 90.
+- Longitude deve estar entre -180 e 180.

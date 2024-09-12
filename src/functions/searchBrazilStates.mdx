@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import { getBrazilStates } from './getBrazilStates';
+import find from "lodash/find";
+import get from "lodash/get";
+
+// Informações Meta
+<Meta title="Functions/searchBrazilStates" />
+
+# `searchBrazilStates`
+
+Busca o nome completo de um estado brasileiro a partir de sua sigla.
+
+## Assinatura da Função
+
+```typescript
+export const searchBrazilStates = (state: string): string;
+```
+
+## Parâmetros
+
+- **state**: `string`  
+  A sigla do estado brasileiro que você deseja buscar (ex: `SP`, `RJ`).
+
+## Retorno
+
+- **string**:  
+  O nome completo do estado brasileiro, incluindo a sigla (ex: `São Paulo - SP`). Retorna `-` se o estado não for encontrado.
+
+## Exemplo de Uso
+
+```tsx
+import { searchBrazilStates } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const stateLabel = searchBrazilStates('SP');
+
+console.log(stateLabel); // 'São Paulo - SP'
+```
+
+## Descrição
+
+A função `searchBrazilStates` busca o nome completo de um estado brasileiro, incluindo sua sigla, a partir de uma sigla fornecida. Ela utiliza a função `getBrazilStates` para obter a lista de estados e então faz a busca pela sigla. Se o estado não for encontrado, a função retorna `-`.

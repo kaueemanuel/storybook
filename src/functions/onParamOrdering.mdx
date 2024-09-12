@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/Datagrid/onParamOrdering" />
+
+# `onParamOrdering`
+
+Gera os parâmetros de ordenação a partir de um modelo de ordenação de grid.
+
+## Assinatura da Função
+
+```typescript
+export const onParamOrdering = (filter: GridSortModel): DatagridParamsType;
+```
+
+## Parâmetros
+
+- **filter**: `GridSortModel`  
+  O modelo de ordenação aplicado ao grid.
+
+## Retorno
+
+- **DatagridParamsType**:  
+  Os parâmetros de ordenação formatados.
+
+## Exemplo de Uso
+
+```tsx
+import { onParamOrdering } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { GridSortModel } from '@mui/x-data-grid';
+
+const sortModel: GridSortModel = [{ field: 'name', sort: 'asc' }];
+const orderParams = onParamOrdering(sortModel);
+
+console.log(orderParams); // { order: [{ PropertyName: 'name', Dir: 'a' }] }
+```
+
+## Descrição
+
+A função `onParamOrdering` converte um `GridSortModel` em parâmetros de ordenação que podem ser utilizados em um grid ou tabela de dados. Ela mapeia o campo e a direção da ordenação, gerando uma estrutura que pode ser utilizada para definir a ordenação de dados em uma API ou sistema.

@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/onlyLatLngMask" />
+
+# `onlyLatLngMask`
+
+Restringe a entrada de caracteres em um campo de texto para permitir apenas números, pontos, e sinais de menos, adequados para coordenadas de latitude e longitude.
+
+## Assinatura da Função
+
+```typescript
+export const onlyLatLngMask = (e: KeyboardEvent): boolean;
+```
+
+## Parâmetros
+
+- **e**: `KeyboardEvent`  
+  O evento de teclado que dispara a validação da entrada.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o caractere pressionado for permitido, caso contrário, impede a entrada e retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { onlyLatLngMask } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+<input type="text" onKeyPress={onlyLatLngMask} />
+```
+
+## Descrição
+
+A função `onlyLatLngMask` é usada para restringir a entrada de caracteres em um campo de texto, permitindo apenas números, pontos (.), e sinais de menos (-), que são os caracteres adequados para coordenadas de latitude e longitude. A função bloqueia qualquer outro caractere que não seja permitido para a representação de coordenadas geográficas.

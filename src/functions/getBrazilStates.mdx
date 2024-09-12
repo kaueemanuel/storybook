@@ -1,0 +1,47 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getBrazilStates" />
+
+# `getBrazilStates`
+
+Retorna uma lista de estados do Brasil com seus respectivos valores e rótulos.
+
+## Assinatura da Função
+
+```typescript
+export const getBrazilStates = (): { value: string, label: string }[];
+```
+
+## Parâmetros
+
+Esta função não recebe parâmetros.
+
+## Retorno
+
+- **Array\<\{ value: string, label: string \}\>**:  
+  Uma lista de objetos representando os estados do Brasil, onde cada objeto contém um valor (`value`) e um rótulo (`label`).
+
+## Exemplo de Uso
+
+```tsx
+import { getBrazilStates } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const brazilStates = getBrazilStates();
+
+console.log(brazilStates);
+/*
+[
+  { value: "AC", label: "Acre - AC" },
+  { value: "AL", label: "Alagoas - AL" },
+  ...
+  { value: "SP", label: "São Paulo - SP" },
+  { value: "SE", label: "Sergipe - SE" },
+  { value: "TO", label: "Tocantins - TO" }
+]
+*/
+```
+
+## Descrição
+
+A função `getBrazilStates` retorna uma lista de todos os estados do Brasil, cada um representado por um objeto contendo um código de estado (`value`) e um rótulo legível (`label`). Essa função é útil para popular menus suspensos ou selecionar estados em formulários.

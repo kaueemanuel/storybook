@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/fileToBase64" />
+
+# `fileToBase64`
+
+Converte um objeto `File` em uma string codificada em Base64.
+
+## Assinatura da Função
+
+```typescript
+export const fileToBase64 = (file: File): Promise<string>;
+```
+
+## Parâmetros
+
+- **file**: `File`  
+  O arquivo a ser convertido para uma string Base64.
+
+## Retorno
+
+- **Promise\<string\>**:  
+  Uma promessa que resolve para a string Base64 representando o conteúdo do arquivo.
+
+## Exemplo de Uso
+
+```tsx
+import { fileToBase64 } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const fileInput = document.querySelector('input[type="file"]');
+fileInput.addEventListener('change', async (event) => {
+  const file = event.target.files[0];
+  const base64String = await fileToBase64(file);
+  console.log(base64String); // Exibe a string Base64 do arquivo selecionado
+});
+```
+
+## Descrição
+
+A função `fileToBase64` usa a `FileReader API` para ler o conteúdo de um objeto `File` e convertê-lo em uma string codificada em Base64. Isso é útil para carregar o conteúdo de arquivos diretamente em memória para serem transmitidos ou processados como strings Base64.

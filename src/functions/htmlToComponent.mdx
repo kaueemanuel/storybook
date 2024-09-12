@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/htmlToComponent" />
+
+# `htmlToComponent`
+
+Converte uma string HTML em um componente React, escapando tags HTML inválidas.
+
+## Assinatura da Função
+
+```typescript
+export const htmlToComponent = (html: string): JSX.Element;
+```
+
+## Parâmetros
+
+- **html**: `string`  
+  A string HTML que você deseja converter em um componente React.
+
+## Retorno
+
+- **JSX.Element**:  
+  Um componente React gerado a partir da string HTML, onde tags inválidas são escapadas para evitar a injeção de código malicioso.
+
+## Exemplo de Uso
+
+```tsx
+import { htmlToComponent } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const htmlString = '<div><invalidTag>Content</invalidTag></div>';
+const component = htmlToComponent(htmlString);
+
+console.log(component); // Um componente React onde <invalidTag> foi escapado para &lt;invalidTag&gt;
+```
+
+## Descrição
+
+A função `htmlToComponent` processa uma string HTML e converte-a em um componente React usando `html-react-parser`. Durante a conversão, a função valida as tags HTML usando uma lista de tags permitidas (`htmlValidTags`). Qualquer tag que não esteja na lista de tags válidas é escapada (por exemplo, `<invalidTag>` é convertido para `&lt;invalidTag&gt;`). Isso é útil para evitar a injeção de HTML malicioso em componentes React.

@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/isMobile" />
+
+# `isMobile`
+
+Detecta se o usuário está utilizando um dispositivo móvel com base no `userAgent`.
+
+## Assinatura da Função
+
+```typescript
+export const isMobile = (): boolean;
+```
+
+## Parâmetros
+
+Esta função não recebe parâmetros.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o `userAgent` corresponder a um dispositivo móvel, caso contrário, retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { isMobile } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+if (isMobile()) {
+  console.log("Você está usando um dispositivo móvel.");
+} else {
+  console.log("Você não está usando um dispositivo móvel.");
+}
+```
+
+## Descrição
+
+A função `isMobile` verifica se o dispositivo do usuário é móvel (como um smartphone ou tablet) utilizando o `userAgent`, `navigator.vendor`, e `window.opera`. Ela faz isso ao comparar o `userAgent` com uma vasta lista de padrões de dispositivos móveis. Se o `userAgent` corresponder a um dos padrões, a função retorna `true`; caso contrário, retorna `false`.

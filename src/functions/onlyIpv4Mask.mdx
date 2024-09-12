@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/onlyIpv4Mask" />
+
+# `onlyIpv4Mask`
+
+Restringe a entrada de caracteres em um campo de texto para permitir apenas números e pontos, adequados para endereços IPv4.
+
+## Assinatura da Função
+
+```typescript
+export const onlyIpv4Mask = (e: KeyboardEvent): boolean;
+```
+
+## Parâmetros
+
+- **e**: `KeyboardEvent`  
+  O evento de teclado que dispara a validação da entrada.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o caractere pressionado for permitido, caso contrário, impede a entrada e retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { onlyIpv4Mask } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+<input type="text" onKeyPress={onlyIpv4Mask} />
+```
+
+## Descrição
+
+A função `onlyIpv4Mask` é usada para restringir a entrada de caracteres em um campo de texto, permitindo apenas números e pontos (caracteres apropriados para endereços IPv4). A função bloqueia qualquer outro caractere que não seja um número, ponto, backspace, ou tabulação.

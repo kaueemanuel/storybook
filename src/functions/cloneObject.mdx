@@ -1,0 +1,40 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/cloneObject" />
+
+# `cloneObject`
+
+Uma função utilitária que cria uma cópia profunda de um objeto.
+
+## Assinatura da Função
+
+```typescript
+export const cloneObject = (obj: object = {}) => object;
+```
+
+## Parâmetros
+
+- **obj**: `object`  
+  O objeto que você deseja clonar. O valor padrão é um objeto vazio `{}`.
+
+## Retorno
+
+- **object**:  
+  Um novo objeto que é uma cópia profunda do objeto original.
+
+## Exemplo de Uso
+
+```tsx
+import { cloneObject } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const originalObject = { a: 1, b: { c: 2 } };
+const clonedObject = cloneObject(originalObject);
+
+console.log(clonedObject); // { a: 1, b: { c: 2 } }
+console.log(originalObject === clonedObject); // false
+```
+
+## Descrição
+
+A função `cloneObject` cria uma cópia profunda de um objeto, garantindo que quaisquer objetos aninhados também sejam copiados de forma independente, evitando modificações no objeto original ao alterar o objeto clonado.

@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/camelCaseToSnakeCase" />
+
+# `camelCaseToSnakeCase`
+
+Uma função utilitária que converte uma string em camelCase para snake_case.
+
+## Assinatura da Função
+
+```typescript
+export const camelCaseToSnakeCase = (str: string) => string;
+```
+
+## Parâmetros
+
+- **str**: `string`  
+  A string em camelCase que você deseja converter para snake_case.
+
+## Retorno
+
+- **string**:  
+  A string convertida para o formato snake_case.
+
+## Exemplo de Uso
+
+```tsx
+import { camelCaseToSnakeCase } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const camelCaseString = 'myVariableName';
+const snakeCaseString = camelCaseToSnakeCase(camelCaseString);
+
+console.log(snakeCaseString); // 'my_variable_name'
+```
+
+## Descrição
+
+A função `camelCaseToSnakeCase` converte uma string de camelCase para snake_case, inserindo underscores entre palavras e transformando todas as letras em minúsculas.

@@ -1,0 +1,80 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as ModalStories from "./Modal.stories.tsx"
+
+<Meta title="Components/Utils/Modal/Docs" />
+
+# Modal
+
+## Usage
+
+<p>
+  React Modal was used to create the modal, so all options are found here{" "}
+  <a href="https://mui.com/material-ui/react-modal/" target="_blank">
+    React Modal Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the modal you must use the `ModalProvider`, to do this import
+  it into the scope of your application with children inside. By default, this
+  has already been done globally.
+</p>
+
+```tsx
+import { ModalProvider } from "pgv-lib/ui/modal"
+;<React.StrictMode>
+  <ModalProvider>
+    <App />
+  </ModalProvider>
+</React.StrictMode>
+```
+
+<p>
+  Now just imports from hook `useModal` the `openModal` function anywhere in the
+  application and to use.{" "}
+  <a href="https://mui.com/material-ui/api/modal/" target="_blank">
+    modalProps options
+  </a>
+  .
+</p>
+
+```tsx
+import { useModal } from "pgv-lib/ui/modal"
+
+const { openModal } = useModal()
+
+openModal({
+  modalContent: ({ modalId }) => (
+    <>
+      <ModalHeader>Title</ModalHeader>
+      <ModalContent>
+        Content
+      </ModalContent>
+      <ModalActions>
+        <Button onClick={() => {closeModal(modalId)}} variant="outlined">Disagree</Button>
+        <Button onClick={() => {closeModal(modalId)}} variant="contained" autoFocus>
+          Agree
+        </Button>
+      </ModalActions>
+    </>,
+})
+```
+
+<p>If you want to close the modal you can use the `closeModal` function.</p>
+
+```tsx
+import { useModal } from "pgv-lib/ui/hooks/modal"
+
+const { openModal, closeModal } = useModal()
+
+openModal({
+  modalContent: "Content",
+})
+
+// dismiss last open modal
+closeModal()
+
+// dismiss open modal by id
+closeModal("modalId")
+```

@@ -1,0 +1,240 @@
+{
+  "name": "@pgv/lib",
+  "private": false,
+  "version": "0.0.346",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./ui/components": {
+      "types": "./dist/components.d.ts",
+      "import": "./dist/components.js",
+      "require": "./dist/components.cjs"
+    },
+    "./ui/themes": {
+      "types": "./dist/themes.d.ts",
+      "import": "./dist/themes.js",
+      "require": "./dist/themes.cjs"
+    },
+    "./ui/icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.js",
+      "require": "./dist/icons.cjs"
+    },
+    "./ui/material": {
+      "types": "./dist/material.d.ts",
+      "import": "./dist/material.js",
+      "require": "./dist/material.cjs"
+    },
+    "./ui/material/x-data-grid": {
+      "types": "./dist/x-data-grid.d.ts",
+      "import": "./dist/x-data-grid.js",
+      "require": "./dist/x-data-grid.cjs"
+    },
+    "./ui/modal": {
+      "types": "./dist/modal.d.ts",
+      "import": "./dist/modal.js",
+      "require": "./dist/modal.cjs"
+    },
+    "./ui/snackbar": {
+      "types": "./dist/snackbar.d.ts",
+      "import": "./dist/snackbar.js",
+      "require": "./dist/snackbar.cjs"
+    },
+    "./ui/themes/base.css": "./dist/base.css",
+    "./ui/themes/dayjsLocales.js": "./dist/dayjsLocales.js",
+    "./ui/emotion/react": {
+      "types": "./dist/emotion-react.d.ts",
+      "import": "./dist/emotion-react.js",
+      "require": "./dist/emotion-react.cjs"
+    },
+    "./ui/emotion/css": {
+      "types": "./dist/emotion-css.d.ts",
+      "import": "./dist/emotion-css.js",
+      "require": "./dist/emotion-css.cjs"
+    },
+    "./ui/emotion/styled": {
+      "types": "./dist/emotion-styled.d.ts",
+      "import": "./dist/emotion-styled.js",
+      "require": "./dist/emotion-styled.cjs"
+    },
+    "./ui/logos": {
+      "types": "./dist/logos.d.ts",
+      "import": "./dist/logos.js",
+      "require": "./dist/logos.cjs"
+    },
+    "./ui/drawer": {
+      "types": "./dist/drawer.d.ts",
+      "import": "./dist/drawer.js",
+      "require": "./dist/drawer.cjs"
+    },
+    "./ui/dialog": {
+      "types": "./dist/dialog.d.ts",
+      "import": "./dist/dialog.js",
+      "require": "./dist/dialog.cjs"
+    },
+    "./ui/widgets": {
+      "types": "./dist/widgets.d.ts",
+      "import": "./dist/widgets.js",
+      "require": "./dist/widgets.cjs"
+    },
+    "./ui/animations": {
+      "types": "./dist/animations.d.ts",
+      "import": "./dist/animations.js",
+      "require": "./dist/animations.cjs"
+    },
+    "./patterns": {
+      "types": "./dist/patterns.d.ts",
+      "import": "./dist/patterns.js",
+      "require": "./dist/patterns.cjs"
+    },
+    "./functions": {
+      "types": "./dist/functions.d.ts",
+      "import": "./dist/functions.js",
+      "require": "./dist/functions.cjs"
+    },
+    "./requests": {
+      "types": "./dist/requests.d.ts",
+      "import": "./dist/requests.js",
+      "require": "./dist/requests.cjs"
+    },
+    "./ui/providers": {
+      "types": "./dist/providers.d.ts",
+      "import": "./dist/providers.js",
+      "require": "./dist/providers.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "test": "jest --no-cache",
+    "build": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" storybook build",
+    "prepublishOnly": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" npm run build",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "@mui/x-data-grid": "^6.19.1",
+    "@mui/x-date-pickers": "^6.19.2",
+    "dayjs": "^1.11.10",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "yarn": "^1.22.22"
+  },
+  "dependencies": {
+    "@brazilian-utils/format-cnpj": "^0.1.9",
+    "@emotion/css": "^11.11.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/material-icons": "^5.0.11",
+    "@fontsource/roboto": "^5.0.8",
+    "@mui/icons-material": "5.14.3",
+    "@mui/material": "5.14.3",
+    "axios": "^1.7.7",
+    "dompurify": "^3.1.6",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
+    "esbuild-plugin-react-virtualized": "^1.0.4",
+    "html-react-parser": "^5.1.12",
+    "i18next": "^23.7.16",
+    "md5": "^2.3.0",
+    "notistack": "^3.0.1",
+    "primereact": "^10.6.6",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-datepicker": "^6.9.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.49.3",
+    "react-i18next": "^14.0.0",
+    "react-input-mask": "2.0.4",
+    "react-material-symbols": "^4.4.0",
+    "react-resizable-panels": "^2.0.19",
+    "react-router-dom": "^6.21.0",
+    "react-virtualized": "^9.22.5",
+    "swiper": "^11.0.5",
+    "uuid": "^9.0.1",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@mui/x-data-grid": "^6.19.1",
+    "@mui/x-date-pickers": "^6.19.2",
+    "@storybook/addon-essentials": "7.6.8",
+    "@storybook/addon-interactions": "7.6.8",
+    "@storybook/addon-links": "7.6.8",
+    "@storybook/addon-onboarding": "1.0.10",
+    "@storybook/addon-themes": "7.6.8",
+    "@storybook/blocks": "7.6.8",
+    "@storybook/react": "7.6.8",
+    "@storybook/react-vite": "7.6.8",
+    "@storybook/test": "7.6.8",
+    "@types/dompurify": "^3.0.5",
+    "@types/echarts": "^4.9.22",
+    "@types/react": "^18.2.43",
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/react-datepicker": "^6.2.0",
+    "@types/react-dom": "^18.2.17",
+    "@types/react-draft-wysiwyg": "^1.13.8",
+    "@types/react-input-mask": "2.0.4",
+    "@types/react-vertical-timeline-component": "^3.3.6",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.11.10",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "eslint-plugin-storybook": "^0.6.15",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.9",
+    "lodash": "^4.17.21",
+    "moment": "^2.30.1",
+    "prettier": "^3.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.3.1",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "storybook": "7.6.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.6.4",
+    "vite-tsconfig-paths": "^4.2.3",
+    "yarn": "^1.22.22"
+  },
+  "publishConfig": {
+    "registry": "https://registry.voalle.app.br/"
+  },
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as DialogStories from "./Dialog.stories.tsx"
+
+<Meta title="Components/Feedback/Dialog/Docs" />
+
+# Dialog
+
+## Usage
+
+<p>
+  React Dialog was used to create the dialog, so all options are found here{" "}
+  <a href="https://mui.com/material-ui/api/dialog/" target="_blank">
+    React Dialog Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the dialog you must use the `DialogProvider`, to do this import
+  it into the scope of your application with children inside. By default, this
+  has already been done globally.
+</p>
+
+```tsx
+import { DialogProvider } from "pgv-lib/ui/dialog"
+;<React.StrictMode>
+  <DialogProvider>
+    <App />
+  </DialogProvider>
+</React.StrictMode>
+```
+
+<p>
+  Now just imports from hook `useDialog` the `openDialog` function anywhere in
+  the application and to use.{" "}
+  <a href="https://mui.com/material-ui/api/dialog/" target="_blank">
+    dialogProps options
+  </a>
+  .
+</p>
+
+```tsx
+import { useDialog } from "pgv-lib/ui/dialog"
+
+const { openDialog } = useDialog()
+
+openDialog({
+  dialogContent: (
+    <>
+      <DialogTitle>Title</DialogTitle>
+      <DialogContent>
+        <DialogContentText>Content</DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={() => {}}>Disagree</Button>
+        <Button onClick={() => {}} autoFocus>
+          Agree
+        </Button>
+      </DialogActions>
+    </>,
+})
+```
+
+<p>If you want to close the dialog you can use the `closeDialog` function.</p>
+
+```tsx
+import { useDialog } from "pgv-lib/ui/hooks/dialog"
+
+const { openDialog, closeDialog } = useDialog()
+
+openDialog({
+  dialogContent: "Content",
+})
+
+// dismiss open dialog
+closeDialog()
+```

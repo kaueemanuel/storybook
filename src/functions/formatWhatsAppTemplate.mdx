@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+import isEmpty from "lodash/isEmpty";
+
+// Informações Meta
+<Meta title="Functions/formatWhatsAppTemplate" />
+
+# `formatWhatsAppTemplate`
+
+Formata um template de mensagem do WhatsApp substituindo placeholders por valores fornecidos em um array de parâmetros.
+
+## Assinatura da Função
+
+```typescript
+function formatWhatsAppTemplate(text: string = "", params: Array<string> = []): string;
+```
+
+## Parâmetros
+
+- **text**: `string`  
+  O texto a ser formatado, contendo placeholders no formato `{{1}}`, `{{2}}`, etc.
+
+- **params**: `Array<string>`  
+  Um array de strings que será usado para substituir os placeholders no template do WhatsApp.
+
+## Retorno
+
+- **string**:  
+  O template formatado com os placeholders substituídos pelos valores dos parâmetros fornecidos.
+
+## Exemplo de Uso
+
+```tsx
+import { formatWhatsAppTemplate } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const template = "Olá, {{1}}! Seu pedido {{2}} está pronto para envio.";
+const formattedTemplate = formatWhatsAppTemplate(template, ["João", "#12345"]);
+
+console.log(formattedTemplate); // 'Olá, João! Seu pedido #12345 está pronto para envio.'
+```
+
+## Descrição
+
+A função `formatWhatsAppTemplate` substitui placeholders numerados (`{{1}}`, `{{2}}`, etc.) em um template de mensagem do WhatsApp pelos valores fornecidos em um array de parâmetros. Isso é útil para criar mensagens personalizadas de maneira dinâmica. Se o texto ou os parâmetros estiverem vazios, a função retorna o texto original sem alterações.

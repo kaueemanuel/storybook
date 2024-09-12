@@ -1,0 +1,43 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as CardStories from "./Card.stories.tsx"
+
+<Meta title="Components/Surfaces/Card/Docs" />
+
+# Card
+
+## Usage
+
+<p>
+  Cards are surfaces that display content and actions on a single topic. So all
+  options are found here{" "}
+  <a href="https://mui.com/material-ui/react-card/" target="_blank">
+    Card Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the card you must use the `Card`, to do this import it into the
+  scope of your view component.
+</p>
+
+```tsx
+import { Card } from "pgv-lib/ui/components"
+<Card>children</Card>
+```
+
+
+```tsx
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  CardActions,
+} from "pgv-lib/ui/components/Card"
+
+<Card>
+  <CardHeader />
+  <CardContent></CardContent>
+  <CardActions></CardActions>
+</Card>
+```

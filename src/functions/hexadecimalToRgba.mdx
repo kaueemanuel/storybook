@@ -1,0 +1,41 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/hexadecimalToRgba" />
+
+# `hexadecimalToRgba`
+
+Converte uma cor hexadecimal para o formato `RGBA`.
+
+## Assinatura da Função
+
+```typescript
+export function hexadecimalToRgba(hex: string, opacity?: number): string;
+```
+
+## Parâmetros
+
+- **hex**: `string`  
+  A cor em formato hexadecimal que você deseja converter.
+
+- **opacity**: `number`  
+  A opacidade (valor entre 0 e 1) a ser aplicada na cor. O padrão é 1 (totalmente opaco).
+
+## Retorno
+
+- **string**:  
+  A cor convertida no formato `RGBA`.
+
+## Exemplo de Uso
+
+```tsx
+import { hexadecimalToRgba } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const rgbaColor = hexadecimalToRgba('#3498db', 0.5);
+
+console.log(rgbaColor); // 'rgba(52,152,219,0.5)'
+```
+
+## Descrição
+
+A função `hexadecimalToRgba` converte uma cor hexadecimal para o formato `RGBA`, permitindo especificar a opacidade da cor. A função suporta cores em formato hexadecimal de 3 ou 6 caracteres. Se o formato hexadecimal fornecido não for válido, a função lança um erro.

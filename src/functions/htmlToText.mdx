@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/htmlToText" />
+
+# `htmlToText`
+
+Converte uma string HTML em texto simples, removendo todas as tags HTML.
+
+## Assinatura da Função
+
+```typescript
+export const htmlToText = (html: string): string;
+```
+
+## Parâmetros
+
+- **html**: `string`  
+  A string HTML que você deseja converter em texto simples.
+
+## Retorno
+
+- **string**:  
+  O texto extraído da string HTML, sem nenhuma tag HTML.
+
+## Exemplo de Uso
+
+```tsx
+import { htmlToText } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const htmlString = '<p>test</p>';
+const text = htmlToText(htmlString);
+
+console.log(text); // 'test'
+```
+
+## Descrição
+
+A função `htmlToText` converte uma string HTML em texto simples, removendo todas as tags HTML e retornando apenas o conteúdo textual. Isso é útil quando você precisa extrair texto de uma string HTML para exibição ou processamento, garantindo que nenhuma tag HTML permaneça.

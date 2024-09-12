@@ -1,0 +1,36 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/onlyIpv6Mask" />
+
+# `onlyIpv6Mask`
+
+Restringe a entrada de caracteres em um campo de texto para permitir apenas números, letras hexadecimais, e dois pontos, adequados para endereços IPv6.
+
+## Assinatura da Função
+
+```typescript
+export const onlyIpv6Mask = (e: KeyboardEvent): boolean;
+```
+
+## Parâmetros
+
+- **e**: `KeyboardEvent`  
+  O evento de teclado que dispara a validação da entrada.
+
+## Retorno
+
+- **boolean**:  
+  Retorna `true` se o caractere pressionado for permitido, caso contrário, impede a entrada e retorna `false`.
+
+## Exemplo de Uso
+
+```tsx
+import { onlyIpv6Mask } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+<input type="text" onKeyPress={onlyIpv6Mask} />
+```
+
+## Descrição
+
+A função `onlyIpv6Mask` é usada para restringir a entrada de caracteres em um campo de texto, permitindo apenas números, letras hexadecimais (A-F, a-f), e dois pontos (`:`), que são os caracteres adequados para endereços IPv6. A função bloqueia qualquer outro caractere que não seja permitido em endereços IPv6, como símbolos e letras fora do escopo hexadecimal.

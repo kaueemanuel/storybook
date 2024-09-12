@@ -1,0 +1,52 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/customDecrypt" />
+
+# `customDecrypt`
+
+Uma função utilitária que descriptografa um texto personalizado usando um salt e um segredo.
+
+## Assinatura da Função
+
+```typescript
+export const customDecrypt = (input: string, salt: string, secret: string) => string | null;
+```
+
+## Parâmetros
+
+- **input**: `string`  
+  O texto criptografado que você deseja descriptografar.
+
+- **salt**: `string`  
+  O salt usado durante a criptografia.
+
+- **secret**: `string`  
+  O segredo usado durante a criptografia.
+
+## Retorno
+
+- **string | null**:  
+  O texto descriptografado se o salt e o segredo corresponderem, ou `null` se não corresponderem ou se o formato for inválido.
+
+## Exemplo de Uso
+
+```tsx
+import { customDecrypt } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const encryptedText = 'c29tZUVuY3J5cHRlZFRleHQ=:c29tZVNlY3JldFRleHQ=:c29tZVNlY3JldFRleHQ=';
+const salt = 'minhaSalt';
+const secret = 'meuSegredo';
+
+const decryptedText = customDecrypt(encryptedText, salt, secret);
+
+if (decryptedText) {
+  console.log('Texto descriptografado:', decryptedText);
+} else {
+  console.log('Falha na descriptografia.');
+}
+```
+
+## Descrição
+
+A função `customDecrypt` descriptografa um texto que foi previamente criptografado usando um salt e um segredo. Ela compara o salt e o segredo fornecidos com aqueles embutidos no texto criptografado para verificar sua validade. Se forem válidos, o texto descriptografado é retornado; caso contrário, a função retorna `null`.

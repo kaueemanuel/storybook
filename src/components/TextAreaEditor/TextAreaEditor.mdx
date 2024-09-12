@@ -1,0 +1,49 @@
+import { Meta, Canvas, Story } from "@storybook/blocks"
+
+import * as TextAreaEditorStories from "./TextAreaEditor.stories.tsx"
+
+<Meta title="Components/Utils/TextAreaEditor/Docs" />
+
+# TextAreaEditor
+
+## Usage
+
+<p>
+  A TextAreaEditor can be used to write a text with style like color and bold.
+  It's use the react-draft-wysiwyg that use the draft-js. So all options are
+  found here{" "}
+  <a href="https://jpuri.github.io/react-draft-wysiwyg/#/docs" target="_blank">
+    React Draft WYSIWYG Api Reference
+  </a>
+  and
+  <a href="https://draftjs.org/docs/getting-started" target="_blank">
+    DraftJS Api Reference
+  </a>
+  .
+</p>
+<p>
+  To make use of the text area editor you must use the `TextAreaEditor`, to do
+  this import it into the scope of your view component.
+</p>
+
+```tsx
+import { TextAreaEditor } from "pgv-lib/ui/components"
+;<TextAreaEditor />
+```
+
+```tsx
+import { TextAreaEditor } from "pgv-lib/ui/components/TextAreaEditor"
+;<TextAreaEditor
+  rows={2}
+  value="<b>Initial value</b>"
+  label="Label Field"
+  placeholder="Placeholder Field"
+  toolbarOptions={{
+    inline: ["bold", "italic", "underline", "strikethrough"],
+    textAlign: ["left", "center", "right", "justify"],
+    colorPicker: ["colorPicker"],
+    link: ["link", "unlink"],
+    emoji: ["emoji"],
+  }}
+/>
+```

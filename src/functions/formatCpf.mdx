@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/formatCpf" />
+
+# `formatCpf`
+
+Formata uma string de CPF (Cadastro de Pessoas Físicas) no padrão brasileiro.
+
+## Assinatura da Função
+
+```typescript
+export const formatCpf = (cpf: string): string;
+```
+
+## Parâmetros
+
+- **cpf**: `string`  
+  A string que representa o CPF que você deseja formatar.
+
+## Retorno
+
+- **string**:  
+  O CPF formatado no padrão brasileiro.
+
+## Exemplo de Uso
+
+```tsx
+import { formatCpf } from 'caminho-do-seu-arquivo-de-utilitarios';
+
+const formattedCpf = formatCpf('12345678909');
+
+console.log(formattedCpf); // '123.456.789-09'
+```
+
+## Descrição
+
+A função `formatCpf` remove todos os caracteres não numéricos de uma string de CPF e a formata no padrão brasileiro `XXX.XXX.XXX-XX`. Isso é útil para garantir que o CPF seja exibido de maneira consistente e legível.

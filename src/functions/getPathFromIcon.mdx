@@ -1,0 +1,39 @@
+import { Meta, Canvas, Story } from "@storybook/blocks";
+
+// Informações Meta
+<Meta title="Functions/getPathFromIcon" />
+
+# `getPathFromIcon`
+
+Obtém o atributo `d` do elemento `path` de um ícone SVG.
+
+## Assinatura da Função
+
+```typescript
+export const getPathFromIcon = (Icon: JSX.Element | Element): string | null;
+```
+
+## Parâmetros
+
+- **Icon**: `JSX.Element | Element`  
+  O ícone SVG do qual você deseja obter o path.
+
+## Retorno
+
+- **string | null**:  
+  O atributo `d` do elemento `path` do SVG. Retorna `null` se o `path` não for encontrado.
+
+## Exemplo de Uso
+
+```tsx
+import { getPathFromIcon } from 'caminho-do-seu-arquivo-de-utilitarios';
+import { ReactComponent as MyIcon } from './my-icon.svg';
+
+const path = getPathFromIcon(MyIcon);
+
+console.log(path); // Exibe o valor do atributo "d" do path do SVG
+```
+
+## Descrição
+
+A função `getPathFromIcon` utiliza `ReactDOMServer.renderToString` para converter um ícone SVG (fornecido como componente React ou elemento DOM) em uma string HTML. Em seguida, ela converte essa string em um documento SVG/XML e retorna o valor do atributo `d` do elemento `path` do ícone, que define a geometria do ícone. Isso é útil para obter o path de ícones SVG de forma programática.
