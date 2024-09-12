@@ -118,8 +118,9 @@
     "test": "jest --no-cache",
     "build": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" storybook build",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public",
+    "serve-storybook": "serve storybook-static",
     "prepublishOnly": "cross-env NODE_OPTIONS=\"--max_old_space_size=4096\" npm run build",
     "prepare": "husky install"
   },
